@@ -6,7 +6,7 @@ test('the Strickland box sits beside the status on wide screens and below it on 
   const box = page.locator('#callout');
   await expect(box).toBeVisible();
   await expect(box.getByRole('heading', { level: 2 })).toHaveText("Strickland didn't show up.");
-  for (const text of ['211 to 204', 'Rep. Marilyn Strickland (D-Pierce County)', 'motorcade', '$291,000', "reported by AIPAC's PAC in its FEC filings", 'It passed by seven votes.']) await expect(box).toContainText(text);
+  for (const text of ['211 to 204', 'Rep. Marilyn Strickland (D-Pierce County)', 'motorcade', '$291,000', "So who is she beholden to?", 'It passed by seven votes.']) await expect(box).toContainText(text);
   await expect(box.locator('#calloutSources a')).toHaveCount(4);
   const a = await page.locator('#status').boundingBox(), b = await box.boundingBox(), steps = await page.locator('#steps').boundingBox();
   if ((page.viewportSize()?.width || 0) >= 900) { expect(Math.abs(a.y - b.y)).toBeLessThan(2); expect(b.x).toBeGreaterThan(a.x + a.width - 1); }
@@ -25,6 +25,7 @@ test('the separate Strickland letter opens with her greeting, the visitor detail
   expect(body).toMatch(/^Dear Representative Strickland,\n\nI'm writing to repudiate your absence on November 10/);
   expect(body).toMatch(/Alex Smith\nLacey, WA 98503$/);
   expect(body).toContain('Reply to this letter');
+  expect(body).toContain('Tell us who you are beholden to: your constituents, or AIPAC?');
   expect(body).not.toMatch(/—/);
   const strickland = await page.evaluate(() => window.CAMPAIGN.officials.find(o => o.id === 'strickland'));
   await expect(page.locator('#calloutForm')).toHaveAttribute('href', strickland.website);
