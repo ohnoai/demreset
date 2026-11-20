@@ -235,7 +235,7 @@ Thank you,
     title: "Strickland didn't show up.",
     items: [
       { label: 'Vote', text: 'On November 10, the House voted 211 to 204 to send the articles of impeachment against Pete Hegseth to committee, shelving them. Rep. Marilyn Strickland (D-Pierce County) was one of 11 Democrats who missed the vote. It passed by seven votes.' },
-      { label: 'Excuse', text: 'Her office says she was stuck behind a motorcade and missed the vote by one minute.' },
+      { label: 'No excuse', text: 'Her office blames a motorcade and says she missed the vote by one minute. Cutting it that close on a vote this important is a failure to prepare, and it had consequences: with her and 10 other Democrats absent, Hegseth was spared an immediate rebuke over the war in Iran, and his impeachment is shelved until January.' },
       { label: 'Money', text: "She has taken about $291,000 in AIPAC PAC-linked campaign money since February 2022, all of it reported by AIPAC's PAC in its FEC filings." }
     ],
     sources: [
@@ -251,7 +251,7 @@ Thank you,
       subject: 'You missed the Hegseth vote',
       message: `I'm writing to repudiate your absence on November 10, when the House voted 211 to 204 to send the articles of impeachment against Pete Hegseth to committee and shelve them. It passed by seven votes, and you were one of 11 Democrats who missed it.
 
-Your office says you were stuck behind a motorcade and arrived a minute late. You said you take full responsibility. Then take it. Your one job is to show up and vote, and on the vote that mattered most this month, you weren't there.
+Your office says you were stuck behind a motorcade and arrived a minute late. That is not an excuse. Cutting it that close on a vote this important is a failure to prepare, and it had consequences: with you and 10 other Democrats absent, Hegseth was spared an immediate rebuke over the war in Iran, and his impeachment is shelved until January. You said you take full responsibility. Then take it. Your one job is to show up and vote, and on the vote that mattered most this month, you weren't there.
 
 You have taken about $291,000 in AIPAC PAC-linked campaign money since February 2022. When a Democrat who takes that money misses the vote that shelved Hegseth's impeachment, your constituents are entitled to ask who you were really there for.
 
