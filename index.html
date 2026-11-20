@@ -48,6 +48,12 @@
         <div class="hero-argument"><h2 id="intro">Replace Chuck Schumer and Hakeem Jeffries as Democratic congressional leaders. Ask Washington State's delegation to back a change.</h2><a class="start-action" href="#steps">Demand new leadership <span aria-hidden="true">↓</span></a><p class="hero-note">Your voice. Their vote. Start with one office.</p></div>
       </div>
     </section>
+    <section class="status" id="status" aria-labelledby="statusTitle" hidden>
+      <p class="eyebrow" id="statusEyebrow"></p>
+      <h2 id="statusTitle"></h2>
+      <dl id="statusItems"></dl>
+      <p class="note" id="statusSources"></p>
+    </section>
     <noscript><p class="notice">JavaScript is needed for the steps below. You can still <a href="https://app.leg.wa.gov/DistrictFinder/">find your district</a> and contact Congress through its official websites.</p></noscript>
     <section class="how" id="steps" tabindex="-1" aria-labelledby="howTitle">
       <p class="eyebrow">THE ASK IS SIMPLE. MAKE IT HEARD.</p>
@@ -88,6 +94,7 @@
             <div><p class="k" id="position"></p><h3 id="officialName"></h3><p id="officialRole"></p></div>
             <div class="arrows"><button type="button" id="previousOfficial" aria-label="Previous official">‹</button><button type="button" id="nextOfficial" aria-label="Next official">›</button></div>
           </div>
+          <div class="ask" id="askRow" role="group" aria-labelledby="askLabel"><p class="k" id="askLabel"></p><div class="ask-choices" id="askChoices"></div><p class="note" id="askNote"></p></div>
           <div class="tabs" role="group" aria-label="How to contact"><button type="button" data-channel="letter">Letter</button><button type="button" data-channel="call">Call</button><button type="button" data-channel="social">Social</button></div>
           <div class="length" id="letterVersion" role="group" aria-label="Letter length"><button type="button" data-version="full">Full letter</button><button type="button" data-version="concise">Concise</button></div>
           <div class="subject" id="subjectRow"><p><span class="k">Subject</span> <span id="subjectText"></span></p><button type="button" class="link" id="copySubject">Copy subject</button></div>

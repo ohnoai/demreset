@@ -3,7 +3,7 @@
   'use strict';
   const create = (defaults = {}, conciseDefaults = {}) => ({
     shared: { subject: '', message: '', ...defaults, conciseSubject: conciseDefaults.subject ?? '', conciseMessage: conciseDefaults.message ?? '' },
-    personal: {}, details: {}, bindings: {}, categoryShared: {}, editorialVersion: 1, legacyShared: false, selected: '', district: '', channel: 'letter', letterVersion: 'full'
+    personal: {}, details: {}, bindings: {}, categoryShared: {}, editorialVersion: 1, legacyShared: false, selected: '', district: '', channel: 'letter', letterVersion: 'full', ask: 'oppose'
   });
   function draft(state, official, content = {}) {
     const title = official.group === 'senate' ? 'Senator' : official.group === 'house' ? 'Representative' : '';
@@ -100,6 +100,7 @@
     Object.assign(state, strings(value, ['selected', 'district']));
     if (['letter', 'call', 'social'].includes(value.channel)) state.channel = value.channel;
     if (['full', 'concise'].includes(value.letterVersion)) state.letterVersion = value.letterVersion;
+    if (typeof value.ask === 'string') state.ask = value.ask;
     if (record(value.personal)) {
       for (const [id, fields] of Object.entries(value.personal)) {
         if (record(fields)) Object.defineProperty(state.personal, id, { value: strings(fields, ['subject', 'message', 'conciseSubject', 'conciseMessage', 'call', 'social', 'legacyReview', 'reviewed']), enumerable: true, writable: true, configurable: true });

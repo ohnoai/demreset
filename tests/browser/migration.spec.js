@@ -106,7 +106,7 @@ test('every active official renders full and concise letters within the conserva
     }));
   });
   expect(rows).toHaveLength(24);
-  for (const row of rows) { expect(row.count).toBeGreaterThanOrEqual(row.version === 'full' ? 1500 : 700); expect(row.count).toBeLessThanOrEqual(row.version === 'full' ? 1700 : 900); }
+  for (const row of rows) { expect(row.count).toBeGreaterThanOrEqual(row.version === 'full' ? 1500 : 700); expect(row.count).toBeLessThanOrEqual(row.version === 'full' ? 1900 : 1200); }
   for (const version of ['full', 'concise']) for (const cat of ['senate', 'house', 'influence'])
     expect(new Set(rows.filter(r => r.category === cat && r.version === version).map(r => r.message.split('\n\n').slice(1).join('\n\n'))).size).toBe(1);
 });

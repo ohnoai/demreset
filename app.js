@@ -106,16 +106,30 @@
     const list = myList();
     return list.find(o => o.id === state.selected) || list.find(o => !contacted(o)) || list[0];
   }
+  // The chosen ask swaps exact phrases in the Senate and state-leadership defaults. Personal edits always win.
+  const askContent = {};
+  function content() {
+    const option = T.asks?.options?.[state.ask];
+    if (!option?.edits) return T;
+    if (askContent[state.ask]) return askContent[state.ask];
+    const swap = text => option.edits.reduce((s, [from, to]) => s.split(from).join(to), text);
+    const c = JSON.parse(JSON.stringify(T));
+    for (const category of ['senate', 'influence']) {
+      for (const src of [c, c.concise]) if (src?.letters?.[category]) for (const field of ['subject', 'message']) src.letters[category][field] = swap(src.letters[category][field]);
+      for (const channel of ['calls', 'posts']) if (c[channel]?.[category]) c[channel][category] = swap(c[channel][category]);
+    }
+    return (askContent[state.ask] = c);
+  }
   const letterFields = () => state.letterVersion === 'concise' ? { message: 'conciseMessage', subject: 'conciseSubject' } : { message: 'message', subject: 'subject' };
   function socialText(st, o) {
     const n = normalized(o), handle = o.name + ':';
     // Sharing may target any network; a published X/Facebook identity is not a universal mention.
-    return st.personal[o.id]?.social ?? T.posts?.[n.vote || 'influence']?.replace('[official]', handle) ?? T.social.replace('[handle]', handle).replace('[socialRequest]', n.vote ? 'Use your caucus vote to support a credible alternative.' : 'Use your influence to advocate for change.');
+    return st.personal[o.id]?.social ?? content().posts?.[n.vote || 'influence']?.replace('[official]', handle) ?? T.social.replace('[handle]', handle).replace('[socialRequest]', n.vote ? 'Use your caucus vote to support a credible alternative.' : 'Use your influence to advocate for change.');
   }
   // The text shown for an official and channel; the same model calls as before, so wording is unchanged.
   function texts(st, o) {
-    const n = normalized(o), d = M.draft(st, n, T);
-    return { subject: d.subject, letter: d.message, call: M.call(st, n, T), social: socialText(st, o) };
+    const n = normalized(o), d = M.draft(st, n, content());
+    return { subject: d.subject, letter: d.message, call: M.call(st, n, content()), social: socialText(st, o) };
   }
   const shown = (o = current()) => texts(state, o)[state.channel];
   const editFields = channel => channel === 'letter' ? Object.values(letterFields()) : [channel];
@@ -139,6 +153,26 @@
   $('forkLink').href = C.repository || $('forkLink').href;
   $('finishTitle').textContent = T.finish?.title || 'Thank you.';
   $('finishMessage').textContent = T.finish?.message || '';
+  const status = T.status;
+  $('status').hidden = !status;
+  if (status) {
+    $('statusEyebrow').textContent = status.eyebrow || '';
+    $('statusTitle').textContent = status.title || '';
+    $('statusItems').replaceChildren(...(status.items || []).map(item => {
+      const div = document.createElement('div'), dt = document.createElement('dt'), dd = document.createElement('dd');
+      dt.textContent = item.label; dd.textContent = item.text; div.append(dt, dd); return div;
+    }));
+    $('statusSources').replaceChildren('Sources: ', ...(status.sources || []).flatMap((source, i) => {
+      const link = Object.assign(document.createElement('a'), { href: source.url, target: '_blank', rel: 'noopener noreferrer', textContent: source.name + ' ↗' });
+      return i ? [', ', link] : [link];
+    }));
+  }
+  const askOptions = Object.entries(T.asks?.options || {});
+  $('askRow').hidden = askOptions.length < 2;
+  if (!T.asks?.options?.[state.ask]) state.ask = askOptions[0]?.[0] || 'oppose';
+  $('askLabel').textContent = T.asks?.label || '';
+  $('askNote').textContent = T.asks?.note || '';
+  $('askChoices').replaceChildren(...askOptions.map(([id, option]) => { const b = document.createElement('button'); b.type = 'button'; b.textContent = option.label; b.dataset.ask = id; return b; }));
   for (const source of C.sources) {
     const link = document.createElement('a'); link.textContent = source.name + ' ↗';
     link.href = source.url; link.target = '_blank'; link.rel = 'noopener noreferrer'; $('sources').append(link);
@@ -260,6 +294,7 @@
     $('previousOfficial').disabled = i <= 0; $('nextOfficial').disabled = i >= n - 1;
     for (const b of document.querySelectorAll('[data-channel]')) b.setAttribute('aria-pressed', String(b.dataset.channel === channel));
     for (const b of document.querySelectorAll('[data-version]')) b.setAttribute('aria-pressed', String(b.dataset.version === (state.letterVersion || 'full')));
+    for (const b of document.querySelectorAll('[data-ask]')) b.setAttribute('aria-pressed', String(b.dataset.ask === state.ask));
     $('letterVersion').hidden = $('subjectRow').hidden = channel !== 'letter';
     const subject = o.form?.subject, noTextSubject = channel === 'letter' && subject?.status === 'verified' && ['absent', 'category'].includes(subject.control);
     $('subjectText').textContent = t.subject;
@@ -302,6 +337,7 @@
   $('previousOfficial').onclick = () => { const list = myList(); select(list[Math.max(0, list.indexOf(current()) - 1)].id); };
   $('nextOfficial').onclick = () => { const list = myList(); select(list[Math.min(list.length - 1, list.indexOf(current()) + 1)].id); };
   for (const b of document.querySelectorAll('[data-channel]')) b.onclick = () => { state.channel = b.dataset.channel; feedback(''); save(); renderConsole(); };
+  for (const b of document.querySelectorAll('[data-ask]')) b.onclick = () => { state.ask = b.dataset.ask; feedback(''); save(); renderConsole(); };
   for (const b of document.querySelectorAll('[data-version]')) b.onclick = () => { state.letterVersion = b.dataset.version; feedback(''); save(); renderConsole(); };
   $('sent').onclick = () => {
     if (!unlocked()) {
@@ -371,9 +407,9 @@
       state.personal[o.id] = clean.personal[o.id]; state.bindings[o.id] = clean.bindings[o.id];
     }
     const before = texts(state, o);
-    if (channel === 'letter' && $('editSubject').value !== before.subject) M.editDisplayed(state, n, 'subject', $('editSubject').value, T);
+    if (channel === 'letter' && $('editSubject').value !== before.subject) M.editDisplayed(state, n, 'subject', $('editSubject').value, content());
     const body = $('editBody').value;
-    if (body !== before[channel]) M.editDisplayed(state, n, channel === 'letter' ? 'message' : channel, body, T);
+    if (body !== before[channel]) M.editDisplayed(state, n, channel === 'letter' ? 'message' : channel, body, content());
     $('editor').close(); save(); renderConsole();
     // Confirm only a real save; a refused or failed save keeps its own warning on screen.
     if (!draftConflict && !readFailures.size && !writeFailures.size) feedback(resetRequested ? 'Back to the original text.' : 'Saved on this device.');
