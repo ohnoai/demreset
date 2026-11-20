@@ -245,6 +245,7 @@ Thank you,
       { name: 'FEC, AIPAC PAC to Strickland', url: 'https://www.fec.gov/data/disbursements/?committee_id=C00797670&recipient_name=STRICKLAND+FOR+WASHINGTON&two_year_transaction_period=2026&two_year_transaction_period=2024&two_year_transaction_period=2022' }
     ],
     action: 'Write Strickland a letter',
+    page: '/strickland',
     dialogTitle: 'Your letter to Rep. Strickland',
     note: "House contact forms usually take messages only from people in the district. If you're not in WA-10, you can still call her office.",
     letter: {

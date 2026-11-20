@@ -169,7 +169,7 @@
       return i ? [', ', link] : [link];
     }));
   }
-  // The second box: same dt/dd layout, plus a separate letter in its own dialog. Not saved; copy it out.
+  // The second box: same dt/dd layout, linking to its own page with the letter (strickland/index.html).
   const callout = T.callout, calloutOfficial = callout && allOfficials.find(o => o.id === callout.official);
   $('callout').hidden = !calloutOfficial;
   if (calloutOfficial) {
@@ -184,20 +184,7 @@
       return i ? [', ', link] : [link];
     }));
     $('calloutOpen').textContent = callout.action;
-    $('calloutDialogTitle').textContent = callout.dialogTitle || callout.action;
-    $('calloutNote').textContent = callout.note || '';
-    $('calloutForm').href = calloutOfficial.website;
-    $('calloutCall').href = 'tel:+1' + calloutOfficial.phone.replace(/\D/g, '');
-    $('calloutCall').textContent = 'Call ' + calloutOfficial.phone;
-    $('calloutOpen').onclick = () => {
-      const name = (state.details?.name || '').trim() || '[Your name]';
-      const greeting = calloutOfficial.greeting || `Dear Representative ${calloutOfficial.name.split(' ').at(-1)},`;
-      $('calloutSubject').value = callout.letter.subject;
-      $('calloutBody').value = greeting + '\n\n' + callout.letter.message.replace('[Your name]', name).replace('[Your location]', M.location(state.details));
-      $('calloutDialog').showModal();
-    };
-    $('calloutCopy').onclick = () => copy($('calloutBody').value, 'Copied. Ready to paste.');
-    $('closeCallout').onclick = () => $('calloutDialog').close();
+    $('calloutOpen').href = callout.page;
   }
   const askOptions = Object.entries(T.asks?.options || {});
   $('askRow').hidden = askOptions.length < 2;
