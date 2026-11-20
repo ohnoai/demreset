@@ -48,12 +48,21 @@
         <div class="hero-argument"><h2 id="intro">Replace Chuck Schumer and Hakeem Jeffries as Democratic congressional leaders. Ask Washington State's delegation to back a change.</h2><a class="start-action" href="#steps">Demand new leadership <span aria-hidden="true">↓</span></a><p class="hero-note">Your voice. Their vote. Start with one office.</p></div>
       </div>
     </section>
+    <div class="status-row">
     <section class="status" id="status" aria-labelledby="statusTitle" hidden>
       <p class="eyebrow" id="statusEyebrow"></p>
       <h2 id="statusTitle"></h2>
       <dl id="statusItems"></dl>
       <p class="note" id="statusSources"></p>
     </section>
+    <section class="status callout" id="callout" aria-labelledby="calloutTitle" hidden>
+      <p class="eyebrow" id="calloutEyebrow"></p>
+      <h2 id="calloutTitle"></h2>
+      <dl id="calloutItems"></dl>
+      <button type="button" class="btn go" id="calloutOpen" aria-haspopup="dialog"></button>
+      <p class="note" id="calloutSources"></p>
+    </section>
+    </div>
     <noscript><p class="notice">JavaScript is needed for the steps below. You can still <a href="https://app.leg.wa.gov/DistrictFinder/">find your district</a> and contact Congress through its official websites.</p></noscript>
     <section class="how" id="steps" tabindex="-1" aria-labelledby="howTitle">
       <p class="eyebrow">THE ASK IS SIMPLE. MAKE IT HEARD.</p>
@@ -151,6 +160,15 @@
     <button type="button" class="btn" id="erase">Erase my drafts and actions</button>
     <div id="eraseConfirm" hidden><p>Erase permanently on this device?</p><div class="row"><button type="button" class="btn go" id="confirmErase">Yes, erase local data</button><button type="button" class="btn" id="cancelErase">Cancel</button></div></div>
     <button type="button" class="link dialog-close" id="closeAbout">Close</button>
+  </dialog>
+  <dialog id="calloutDialog" aria-labelledby="calloutDialogTitle">
+    <h2 id="calloutDialogTitle"></h2>
+    <p id="calloutNote"></p>
+    <label for="calloutSubject">Subject</label><input id="calloutSubject">
+    <label for="calloutBody">Letter</label>
+    <textarea id="calloutBody" spellcheck="true"></textarea>
+    <div class="row"><button type="button" class="btn" id="calloutCopy">Copy letter</button><a class="btn go" id="calloutForm" target="_blank" rel="noopener noreferrer">Open her contact form ↗</a><a class="btn" id="calloutCall"></a></div>
+    <button type="button" class="link dialog-close" id="closeCallout">Close</button>
   </dialog>
   <dialog id="tipDialog" class="tip-dialog" aria-label="Tip jar"><div id="tipDialogBody"></div><button type="button" class="link dialog-close" id="closeTips">Close</button></dialog>
   <p id="feedback" class="toast" role="status" aria-live="polite"></p>

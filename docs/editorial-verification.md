@@ -131,3 +131,20 @@ Newhouse (WA-04) and Baumgartner (WA-05) vote on January 3 but not in either Dem
 - [14] Deschler's Precedents, vol. 1, ch. 1 § 6, https://www.govinfo.gov/content/pkg/GPO-HPREC-DESCHLERS-V1/html/GPO-HPREC-DESCHLERS-V1-1-2-6.htm: the Clerk declares the Speaker elected "having received a majority of the votes cast."
 
 The "America First" line is argument, not a factual claim. The letter does not state the House margin, only that "present" votes and absences lower the number Jeffries needs.
+
+## Strickland box, 2026-11-20
+
+[15] https://clerk.house.gov/votes/2026317 (Roll Call 317, Nov 10, 2026, "On Motion to Refer", "Impeaching Peter Brian Hegseth, Secretary of Defense"): yea 211, nay 204, not voting 18; Democratic 0 yea, 203 nay, 11 not voting.
+    > "Strickland | Democratic | Washington | WA | Not Voting"
+[16] https://www.seattletimes.com/seattle-news/politics/house-blocks-hegseth-impeachment-effort-strickland-absent/
+    > "Rep. Marilyn Strickland, of Tacoma, was among 11 Democrats who missed the vote, with her office saying she arrived one minute too late."
+    > "“The Congresswoman was stuck behind a motorcade and missed the vote by 1 minute,” said Siena Miller, a spokesperson for Strickland’s office."
+[17] https://www.dnews.com/northwest/wash-congresswoman-sorry-for-missing-hegseth-impeachment-vote-ba2c6b87/ (Washington State Standard, reprinted; the Standard's own page returned 403 to a raw fetch)
+    > "“I take full responsibility for not being there to vote,” U.S. Rep. Marilyn Strickland, D-Pierce County, told a Seattle television reporter on Wednesday."
+    > "the House voted 211-204, largely along party lines, to refer articles of impeachment against Hegseth to a committee, effectively killing the impeachment effort until the end of the current Congress in January."
+[18] https://www.ibtimes.co.uk/haley-stevens-democrats-hegseth-impeachment-aipac-1831591
+    > "Gillen received approximately $467,000 (£350,000) through AIPAC PAC, followed by Strickland with $291,000 (£218,000)"
+[19] https://gomcgill.com/fact-check-did-aipac-money-play-a-role-in-11-democrats-missing-hegseths-impeachment-vote
+    > "According to SignalData’s review of Federal Election Commission filings, 10 of the 11 absent Democrats received money through AIPAC PAC between January 2022 and October 14, 2026. The figures include contributions from the PAC itself as well as individual donations earmarked through the PAC and forwarded to candidates."
+
+The $291,000 figure is secondary: SignalData's review as reported by IBTimes UK and McGill Media, not checked against FEC filings directly. The owner's brief said "since December 2021"; the sources say January 2022, which the site uses. "If all 11 had been there and voted no, it would have failed" is arithmetic: 211 yea against 204 + 11 = 215 nay.

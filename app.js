@@ -169,6 +169,36 @@
       return i ? [', ', link] : [link];
     }));
   }
+  // The second box: same dt/dd layout, plus a separate letter in its own dialog. Not saved; copy it out.
+  const callout = T.callout, calloutOfficial = callout && allOfficials.find(o => o.id === callout.official);
+  $('callout').hidden = !calloutOfficial;
+  if (calloutOfficial) {
+    $('calloutEyebrow').textContent = callout.eyebrow || '';
+    $('calloutTitle').textContent = callout.title || '';
+    $('calloutItems').replaceChildren(...(callout.items || []).map(item => {
+      const div = document.createElement('div'), dt = document.createElement('dt'), dd = document.createElement('dd');
+      dt.textContent = item.label; dd.textContent = item.text; div.append(dt, dd); return div;
+    }));
+    $('calloutSources').replaceChildren('Sources: ', ...(callout.sources || []).flatMap((source, i) => {
+      const link = Object.assign(document.createElement('a'), { href: source.url, target: '_blank', rel: 'noopener noreferrer', textContent: source.name + ' ↗' });
+      return i ? [', ', link] : [link];
+    }));
+    $('calloutOpen').textContent = callout.action;
+    $('calloutDialogTitle').textContent = callout.dialogTitle || callout.action;
+    $('calloutNote').textContent = callout.note || '';
+    $('calloutForm').href = calloutOfficial.website;
+    $('calloutCall').href = 'tel:+1' + calloutOfficial.phone.replace(/\D/g, '');
+    $('calloutCall').textContent = 'Call ' + calloutOfficial.phone;
+    $('calloutOpen').onclick = () => {
+      const name = (state.details?.name || '').trim() || '[Your name]';
+      const greeting = calloutOfficial.greeting || `Dear Representative ${calloutOfficial.name.split(' ').at(-1)},`;
+      $('calloutSubject').value = callout.letter.subject;
+      $('calloutBody').value = greeting + '\n\n' + callout.letter.message.replace('[Your name]', name).replace('[Your location]', M.location(state.details));
+      $('calloutDialog').showModal();
+    };
+    $('calloutCopy').onclick = () => copy($('calloutBody').value, 'Copied. Ready to paste.');
+    $('closeCallout').onclick = () => $('calloutDialog').close();
+  }
   const askOptions = Object.entries(T.asks?.options || {});
   $('askRow').hidden = askOptions.length < 2;
   if (!T.asks?.options?.[state.ask]) state.ask = askOptions[0]?.[0] || 'oppose';
