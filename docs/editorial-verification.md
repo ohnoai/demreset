@@ -102,3 +102,23 @@ All sources below were accessed on **2026-11-10**. The quotes are supporting exc
     > "All votes shall be by secret ballot, except when a motion is made to waive the secret ballot, or on committee lists where no secret ballot is demanded under Rule 20."
 [9] https://news.bgov.com/bloomberg-government-news/house-democratic-leadership-elections-set-for-nov-18-and-19
     > "Elections will be held Nov. 18 and 19, according to two people familiar."
+
+## Status update, 2026-11-20
+
+Checked **2026-11-20** from raw page text (no summarizing tool). Supports the `status` block, the House floor-vote copy and the optional Van Hollen ask in `campaign.js`.
+
+- **Nominated, not elected.** House Democrats nominated Jeffries for Speaker 251-11 on November 18. The full House elects the Speaker on January 3. [10]
+- **Eight disclosed no votes.** Six statement signers who voted, plus Don Leonard and Angela Gonzales-Torres separately. Frederick Haynes signed the statement but missed the vote, so he is not among the 11. Roll Call and the Washington Examiner list Haynes among seven "who voted against"; TIME's account of his absence controls here. [11][10]
+- **Washington State.** None of the eight is from Washington State. No Washington State representative was found saying they voted no. Absence of a statement is not evidence of how anyone voted.
+- **Senate.** Chris Van Hollen announced a challenge to Schumer; Reuters reports a closed-door secret-ballot vote "next month" (December). [12]
+- **Recheck** this section and the `status` block after the Senate vote and after January 3.
+
+[10] https://www.rollcall.com/2026/11/18/democrats-nominate-jeffries-to-be-house-speaker-a-historic-first/
+    > "won decisively, 251-11. The margin suggests Jeffries will easily surpass the necessary 218 votes he will need on the House floor when the full chamber votes in January."
+    > "beginning on January 3rd."
+[11] https://time.com/article/2026/11/18/democrats-hakeem-jeffries-house-speaker-nomination-vote/
+    > "had missed the vote, meaning that he was not among the 11 members who voted against nominating Jeffries."
+    > "Another progressive member-elect, Don Leonard of Ohio, confirmed in a story posted on his Instagram account that he had voted against Jeffries' nomination."
+    > "Newly-elected Angela Gonzales-Torres of California, a Democratic socialist, revealed on social media on Wednesday afternoon that she also voted “no.”"
+[12] https://www.reuters.com/5f374b32b07b/world/us/chris-van-hollen-announces-run-us-senate-majority-leader-challenging-schumer-2026-11-13/
+    > "Closed-door secret-ballot vote to take place next month"

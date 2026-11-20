@@ -172,3 +172,17 @@ footer p{font-size:12px;color:var(--muted);margin:0}footer p a,footer p .link{co
 }
 @media(forced-colors:active){.progress-track,.progress-track>span,.btn,.num{border:1px solid CanvasText}}
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
+.status{margin:0 0 8px;padding:20px 0 20px 18px;border-left:4px solid var(--accent);max-width:760px}
+.status .eyebrow{margin-bottom:8px;color:var(--accent)}
+.status h2{font-family:'Barlow Condensed','Arial Narrow',Impact,sans-serif;font-weight:800;font-size:clamp(28px,4vw,36px);line-height:1.05;margin:0 0 12px}
+.status dl{margin:0;display:grid;gap:10px}
+.status dl div{display:grid;grid-template-columns:72px 1fr;gap:12px}
+.status dt{font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);padding-top:2px}
+.status dd{margin:0;font-size:16px;line-height:1.45}
+@media(max-width:480px){.status dl div{grid-template-columns:1fr;gap:2px}}
+.ask{margin:0 0 16px}.ask .k{font-size:13px;color:var(--muted);text-transform:uppercase;letter-spacing:.06em;margin:0 0 6px}
+.ask-choices{display:grid;grid-template-columns:1fr 1fr;border:2px solid var(--accent);border-radius:6px;overflow:hidden}
+.ask-choices button{min-height:48px;padding:6px 12px;background:none;border:0;font-weight:700;font-size:15px;color:var(--paper)}
+.ask-choices button+button{border-left:2px solid var(--accent)}
+.ask-choices button[aria-pressed=true]{background:var(--accent);color:var(--ink)}
+.ask .note{margin-top:6px;font-size:13px}

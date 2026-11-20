@@ -6,7 +6,7 @@ window.CAMPAIGN_CONTENT = {
   letters: {
     senate: {
       subject: "Oppose Chuck Schumer for Democratic leader",
-      message: `I'm writing as your constituent to urge you to oppose Chuck Schumer when Senate Democrats select their leadership for the next Congress.
+      message: `I'm writing as your constituent to urge you to oppose Chuck Schumer when Senate Democrats choose their leader by secret ballot in December.
 
 Democratic leadership has spent years alienating the working-class Americans it claims to represent. Political cowardice and corporate influence have become hallmarks of the party's establishment. Schumer hasn't broken with that culture. He has helped lead it.
 
@@ -16,11 +16,13 @@ Americans are struggling with housing costs, healthcare, and stagnant wages. The
 
 Every election is presented as an existential struggle. Yet Democratic leaders refuse to confront the institutions and financial incentives perpetuating the problems they campaign against. Their refusal to acknowledge their own failures is indefensible.
 
+I doubt your office hears from many constituents who want Schumer in charge. If it isn't us, who are you beholden to?
+
 A party that demands trust while refusing accountability is not leading. It is protecting its own power.
 
 Oppose Schumer. Support genuine alternative leadership and publicly explain your position.
 
-Please tell me how you intend to vote. Your constituents deserve a direct answer.
+Reply to this letter with your choice and your reason. The ballot is secret, so your word is all we have, and we will hold you to it.
 
 Thank you,
 
@@ -28,8 +30,8 @@ Thank you,
 [Your location]`
     },
     house: {
-      subject: "Oppose Hakeem Jeffries for Democratic leader",
-      message: `I'm writing as your constituent to urge you to oppose Hakeem Jeffries when House Democrats select their leadership for the next Congress.
+      subject: "Oppose Hakeem Jeffries for Speaker",
+      message: `I'm writing as your constituent to urge you to oppose Hakeem Jeffries for Speaker on January 3. The November 18 caucus vote, 251 to 11 by secret ballot, was not final. The floor vote is public. Every member answers by name.
 
 Democratic leadership has spent years alienating working-class Americans. Political cowardice, corporate influence, and an unwillingness to confront entrenched power have become hallmarks of the establishment. Jeffries has done little to distinguish himself from that culture. He has become one of its most prominent defenders.
 
@@ -39,11 +41,13 @@ Americans are struggling with housing, healthcare, and stagnant wages. They dese
 
 Voters are told every election is an existential struggle, yet Democratic leaders refuse to challenge the institutions and financial incentives behind the problems they campaign against.
 
+I doubt your office hears from many constituents who want Jeffries in charge. If it isn't us, who are you beholden to?
+
 A party that demands trust while refusing accountability is not leading. It is protecting its own power.
 
-Oppose Jeffries. Support genuine alternative leadership and publicly explain your position.
+Oppose Jeffries on the floor. Vote for a genuine alternative and publicly explain your position.
 
-Please tell me how you intend to vote. Your constituents deserve a direct answer.
+Reply to this letter with how you voted on November 18, how you will vote on January 3, and why. Your constituents deserve a direct answer, and we will hold you to it.
 
 Thank you,
 
@@ -52,7 +56,7 @@ Thank you,
     },
     influence: {
       subject: "Publicly call for new Democratic congressional leadership",
-      message: `I'm writing to ask you to publicly call for new Democratic congressional leadership, replacing both Chuck Schumer and Hakeem Jeffries.
+      message: `I'm writing to ask you to publicly call for new Democratic congressional leadership, replacing both Chuck Schumer and Hakeem Jeffries. Senate Democrats choose their leader in December. The full House elects its Speaker on January 3.
 
 You don't vote in either congressional caucus. But you are a prominent Washington Democrat, and silence is a political choice. Speak plainly to our delegation. Ask them to oppose the current leadership and support genuine alternatives.
 
@@ -62,9 +66,11 @@ Democrats cannot credibly condemn Republican corruption and corporate favoritism
 
 People are struggling with housing, healthcare, wages and an economy structured around the wealthy. They deserve more than fundraising appeals, televised outrage and warnings that the next election will decide everything.
 
+I doubt many Washington Democrats are asking anyone to keep Schumer and Jeffries in charge. If it isn't us, who is the party beholden to?
+
 A party that demands trust while refusing accountability is not leading. It is protecting its own power.
 
-Will you publicly urge Washington's congressional Democrats to reject Schumer and Jeffries? Will you explain where you stand? Silence is not an answer.
+Will you publicly urge Washington's congressional Democrats to reject Schumer and Jeffries? Reply to this letter with your choice and your reason. Silence is not an answer.
 
 Thank you,
 
@@ -85,15 +91,17 @@ Thank you,
     letters: {
       senate: {
         subject: "Oppose Chuck Schumer for Democratic leader",
-        message: `I'm writing as your constituent to urge you to oppose Chuck Schumer for Senate Democratic leader.
+        message: `I'm writing as your constituent to urge you to oppose Chuck Schumer for Senate Democratic leader in December's secret-ballot vote.
 
 We voted, volunteered, donated and organized. Not to hand power back to defenders of the status quo. Political cowardice and corporate influence have alienated working people. AIPAC wields enormous influence, and Schumer's relationship with it deserves scrutiny.
 
 We cannot pay rent with speeches about democracy. We cannot afford healthcare with fundraising appeals. Every election is called existential, yet Democratic leaders refuse to confront the interests behind the problems they campaign against.
 
+I doubt many constituents are asking you to keep Schumer. So who are you beholden to?
+
 A party that demands trust while refusing accountability is not leading. It is protecting its own power.
 
-Oppose Schumer. Tell me how you intend to vote. Your constituents deserve an answer.
+Oppose Schumer. Reply with your choice and your reason. Your constituents deserve an answer.
 
 Thank you,
 
@@ -101,16 +109,18 @@ Thank you,
 [Your location]`
       },
       house: {
-        subject: "Oppose Hakeem Jeffries for Democratic leader",
-        message: `I'm writing as your constituent to urge you to oppose Hakeem Jeffries for House Democratic leader.
+        subject: "Oppose Hakeem Jeffries for Speaker",
+        message: `I'm writing as your constituent to urge you to oppose Hakeem Jeffries for Speaker on January 3. The November 18 caucus vote was secret and not final. The floor vote is public.
 
 We voted, volunteered, donated and organized. We did not do that to reward political cowardice and corporate influence. Jeffries has defended the establishment that alienated working people. His alignment with interests like AIPAC raises serious questions about whose priorities he serves.
 
 We cannot pay rent with speeches about democracy. We cannot afford healthcare with fundraising appeals. Democrats cannot condemn Republican corruption while protecting their own wealthy patrons.
 
+I doubt many constituents are asking you to keep Jeffries. So who are you beholden to?
+
 A party that demands trust while refusing accountability is not leading. It is protecting its own power.
 
-Oppose Jeffries. Tell me how you intend to vote. Your constituents deserve a direct answer.
+Oppose Jeffries on the floor. Reply with how you voted on November 18, how you will vote on January 3, and why. Your constituents deserve a direct answer.
 
 Thank you,
 
@@ -119,15 +129,17 @@ Thank you,
       },
       influence: {
         subject: "Publicly call for new Democratic congressional leadership",
-        message: `I'm writing to ask you to publicly advocate for replacing Chuck Schumer and Hakeem Jeffries as Democratic congressional leaders.
+        message: `I'm writing to ask you to publicly advocate for replacing Chuck Schumer and Hakeem Jeffries as Democratic congressional leaders. Senate Democrats vote in December. The House votes on January 3.
 
 You do not vote in either caucus. But you have a public platform and influence. Use them. Political cowardice, corporate influence and loyalty to powerful donors have alienated working people. Organizations like AIPAC wield enormous influence while ordinary Americans struggle with rent, healthcare and wages.
 
 We voted, volunteered, donated and organized. We cannot pay rent with speeches about democracy or afford healthcare with fundraising appeals.
 
+I doubt many Washington Democrats are asking to keep Schumer and Jeffries. So who is the party beholden to?
+
 A party that demands trust while refusing accountability is not leading. It is protecting its own power.
 
-Will you call on Washington's delegation to oppose Schumer and Jeffries? Make your position public. Silence is a choice.
+Will you call on Washington's delegation to oppose Schumer and Jeffries? Reply with your choice and your reason. Silence is a choice.
 
 Thank you,
 
@@ -146,18 +158,56 @@ Thank you,
     }
   },
   calls: {
-    senate: 'Hello, my name is [Your name], and I live in [Your location]. My message for [official]: oppose Chuck Schumer for Senate Democratic leader and support a genuine, competitive replacement contest. A new majority is not a mandate to keep him. Please make your position public and explain what measurable commitments you will demand. Please record my request and tell me how the office will respond. Thank you.',
-    house: 'Hello, my name is [Your name], and I live in [Your location]. My message for [official]: oppose Hakeem Jeffries for House Democratic leader and support a genuine, competitive replacement contest. Winning back the House is not a vote of confidence in him. Please make your position public and explain what measurable commitments you will demand. Please record my request and tell me how the office will respond. Thank you.',
-    influence: 'Hello, my name is [Your name], and I live in [Your location]. My message for [official]: publicly advocate for replacing both Chuck Schumer and Hakeem Jeffries. I know you do not vote in either caucus election. Use your platform and relationships to urge Washington congressional Democrats to hold competitive leadership elections. Please make your position public and explain what you will do. Please record my request. Thank you.'
+    senate: 'Hello, my name is [Your name], and I live in [Your location]. My message for [official]: oppose Chuck Schumer for Senate Democratic leader in the December vote and support a genuine, competitive replacement contest. A new majority is not a mandate to keep him. Please make your position public and explain what measurable commitments you will demand. Please record my request and get back to me with their choice and their reason. Thank you.',
+    house: 'Hello, my name is [Your name], and I live in [Your location]. My message for [official]: oppose Hakeem Jeffries for Speaker on the House floor on January 3 and vote for a genuine alternative. Winning back the House is not a vote of confidence in him. The November 18 caucus vote was secret. The floor vote is not. Please make your position public. Please record my request and get back to me with how they voted on November 18, how they will vote on January 3, and why. Thank you.',
+    influence: 'Hello, my name is [Your name], and I live in [Your location]. My message for [official]: publicly advocate for replacing both Chuck Schumer and Hakeem Jeffries. I know you do not vote in either caucus election. Use your platform and relationships to urge Washington congressional Democrats to hold competitive leadership elections. Please make your position public and explain what you will do. Please record my request and get back to me with their choice and their reason. Thank you.'
   },
   posts: {
-    senate: '[official] Please oppose Chuck Schumer for Senate Democratic leader. A new majority is not a mandate to keep him. Support a competitive replacement contest and make your position public. Voters deserve accountability. #DEMRESET',
-    house: '[official] Please oppose Hakeem Jeffries for House Democratic leader. Winning back the House is not a vote of confidence in him. Support a competitive replacement contest and make your position public. #DEMRESET',
-    influence: '[official] Publicly advocate for replacing Chuck Schumer and Hakeem Jeffries. Urge Washington State congressional Democrats to hold competitive leadership elections. Silence is a choice. Voters deserve accountability, not unity without it. #DEMRESET'
+    senate: '[official] Please oppose Chuck Schumer for Senate Democratic leader. A new majority is not a mandate to keep him. Support a competitive replacement contest and make your position public. Reply with your vote and your reason. #DEMRESET',
+    house: '[official] Please oppose Hakeem Jeffries for Speaker on the House floor on January 3. Winning back the House is not a vote of confidence in him. The caucus vote was secret. The floor vote is not. Reply with your vote and your reason. #DEMRESET',
+    influence: '[official] Publicly advocate for replacing Chuck Schumer and Hakeem Jeffries. Urge Washington State congressional Democrats to hold competitive leadership elections. Silence is a choice. Reply with your choice and your reason. #DEMRESET'
   },
   call: 'Hello, my name is [your name], and I live in [your city and ZIP code]. I am calling for [official]. [request] Please record my request and let me know what action the office will take. Thank you.',
   social: '[handle] Washington deserves accountable Democratic leadership. I am urging a change from Chuck Schumer and Hakeem Jeffries. [socialRequest] #DEMRESET',
-  howItWorks: 'Add your details, find your representatives, and send the ready-to-use letters through their contact forms. Just a few minutes to make your voice heard.',
+  // The visitor picks the ask in step 3. "oppose" is the default copy above. Each edit replaces exact
+  // text in the default Senate and state-leadership letters, calls and posts; House copy is unaffected.
+  asks: {
+    label: 'Your ask on Schumer',
+    note: 'Changes what you send your senators and state leaders.',
+    options: {
+      oppose: { label: 'Oppose Schumer' },
+      vanhollen: {
+        label: 'Oppose Schumer, back Van Hollen',
+        edits: [
+          ['Oppose Chuck Schumer for Democratic leader', 'Oppose Chuck Schumer, back Chris Van Hollen'],
+          ['Oppose Schumer. Support genuine alternative leadership and publicly explain your position.', 'Oppose Schumer. Back Chris Van Hollen for Senate Democratic leader and publicly explain your position.'],
+          ['Oppose Schumer. Reply with your choice and your reason.', 'Oppose Schumer. Back Chris Van Hollen. Reply with your choice and your reason.'],
+          ["Will you publicly urge Washington's congressional Democrats to reject Schumer and Jeffries?", "Will you publicly urge Washington's congressional Democrats to reject Schumer and Jeffries, and to back Chris Van Hollen for Senate leader?"],
+          ["Will you call on Washington's delegation to oppose Schumer and Jeffries?", "Will you call on Washington's delegation to oppose Schumer and Jeffries, and to back Chris Van Hollen for Senate leader?"],
+          ['oppose Chuck Schumer for Senate Democratic leader in the December vote and support a genuine, competitive replacement contest.', 'oppose Chuck Schumer for Senate Democratic leader in the December vote and back Chris Van Hollen.'],
+          ['urge Washington congressional Democrats to hold competitive leadership elections.', 'urge Washington congressional Democrats to reject Schumer and back Chris Van Hollen for Senate leader.'],
+          ['Support a competitive replacement contest and make your position public.', 'Back Chris Van Hollen and make your position public.'],
+          ['Urge Washington State congressional Democrats to hold competitive leadership elections.', 'Urge Washington State congressional Democrats to back Chris Van Hollen over Schumer.']
+        ]
+      }
+    }
+  },
+  // Where the leadership fights stand. Dated; reverify before changing. Evidence: docs/editorial-verification.md.
+  status: {
+    eyebrow: 'WHERE IT STANDS · UPDATED NOVEMBER 20, 2026',
+    title: 'Jeffries is nominated. Not elected.',
+    items: [
+      { label: 'House', text: 'On November 18, House Democrats nominated Hakeem Jeffries for Speaker, 251 to 11, by secret ballot. That vote was not final. The full House elects the Speaker on January 3, out loud, by name.' },
+      { label: 'The 11', text: 'Eight of the 11 no votes have said so publicly: Darializa Avila Chevalier (N.Y.), Adam Hamawy (N.J.), Melat Kiros (Colo.), Donavan McKinney (Mich.), Chris Rabb (Pa.), Claire Valdez (N.Y.), Don Leonard (Ohio) and Angela Gonzales-Torres (Calif.). None is from Washington State. If any Washington State representative voted no, they have not said so.' },
+      { label: 'Senate', text: 'Senate Democrats pick their leader by secret ballot in December. Chris Van Hollen is challenging Chuck Schumer.' }
+    ],
+    sources: [
+      { name: 'TIME', url: 'https://time.com/article/2026/11/18/democrats-hakeem-jeffries-house-speaker-nomination-vote/' },
+      { name: 'Roll Call', url: 'https://www.rollcall.com/2026/11/18/democrats-nominate-jeffries-to-be-house-speaker-a-historic-first/' },
+      { name: 'Reuters', url: 'https://www.reuters.com/5f374b32b07b/world/us/chris-van-hollen-announces-run-us-senate-majority-leader-challenging-schumer-2026-11-13/' }
+    ]
+  },
+  howItWorks:'Add your details, find your representatives, and send the ready-to-use letters through their contact forms. Just a few minutes to make your voice heard.',
   finish: {
     title: 'You made a difference.',
     message: 'You showed up. You spoke out. You refused to settle for more of the same. Whatever happens next, you did your part to make change possible. Thank you.'

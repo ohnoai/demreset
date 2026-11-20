@@ -12,7 +12,7 @@ function load() {
 }
 const subjects = {
   senate: 'Oppose Chuck Schumer for Democratic leader',
-  house: 'Oppose Hakeem Jeffries for Democratic leader',
+  house: 'Oppose Hakeem Jeffries for Speaker',
   influence: 'Publicly call for new Democratic congressional leadership'
 };
 const greeting = o => o.greeting || `Dear ${o.group === 'senate' ? 'Senator' : 'Representative'} ${o.name.split(' ').at(-1)},`;
@@ -21,7 +21,8 @@ const crlfLength = text => text.replace(/\r?\n/g, '\r\n').length;
 test('category letters meet full and concise CRLF budgets for every active greeting', () => {
   const { content, officials } = load();
   assert.deepEqual(Array.from(officials, o => o.id), ['murray', 'cantwell', 'delbene', 'larsen', 'perez', 'randall', 'jayapal', 'schrier', 'smith', 'strickland', 'conrad', 'ferguson']);
-  for (const [version, source, minimum, maximum] of [['full', content, 1500, 1700], ['concise', content.concise, 700, 900]]) {
+  // Full letters must leave room under the 2,000-character form caps for a name and location.
+  for (const [version, source, minimum, maximum] of [['full', content, 1500, 1900], ['concise', content.concise, 700, 1200]]) {
     assert.ok(source.letters, `${version} category letters exist`);
     assert.deepEqual(Object.keys(source.letters).sort(), ['house', 'influence', 'senate']);
     for (const official of officials) {
@@ -31,7 +32,9 @@ test('category letters meet full and concise CRLF budgets for every active greet
       assert.match(letter.message, /Thank you,\n\n\[Your name\]\n\[Your location\]$/);
       const count = crlfLength(`${greeting(official)}\n\n${letter.message}`);
       assert.ok(count >= minimum && count <= maximum, `${version} ${official.id}: ${count}, expected ${minimum}-${maximum}`);
-      assert.doesNotMatch(letter.message, /\u2014|seat count|already control|November|January|2026|2027/i);
+      // Dates are allowed: the owner wants the letters as accurate and direct as possible.
+      assert.doesNotMatch(letter.message, /\u2014|seat count|already control/i);
+      assert.match(letter.message, /[Rr]eply/);
     }
     assert.match(source.letters.senate.message, /oppose Chuck Schumer/);
     assert.match(source.letters.house.message, /oppose Hakeem Jeffries/);
@@ -79,11 +82,41 @@ test('approved campaign copy retains its argument and personal voice', () => {
     }
     assert.match(content.concise.letters[category].message, /We voted, volunteered, donated and organized/);
   }
-  for (const o of officials) assert.ok(2000 - crlfLength(`${greeting(o)}\n\n${content.letters[o.vote || 'influence'].message}`) >= 300);
+  for (const o of officials) assert.ok(2000 - crlfLength(`${greeting(o)}\n\n${content.letters[o.vote || 'influence'].message}`) >= 100);
 });
 
 test('legacy defaults remain byte-for-byte available for saved draft migration', () => {
   const { content: x } = load();
   const legacy = { shared: x.shared, requests: x.requests, concise: { shared: x.concise.shared, requests: x.concise.requests }, call: x.call, social: x.social };
   assert.equal(crypto.createHash('sha256').update(JSON.stringify(legacy)).digest('hex'), '4e39e1e1275f90142f6e76bc7e584f43c6bd46c4cce552267b8b47b1dadd035d');
+});
+
+test('the Van Hollen ask is an explicit option whose edits match the default copy exactly', () => {
+  const { content } = load();
+  assert.deepEqual(Object.keys(content.asks.options), ['oppose', 'vanhollen']);
+  assert.equal(content.asks.options.oppose.edits, undefined);
+  const targets = [];
+  for (const source of [content, content.concise]) for (const c of ['senate', 'influence']) targets.push(source.letters[c].subject, source.letters[c].message);
+  for (const c of ['senate', 'influence']) targets.push(content.calls[c], content.posts[c]);
+  const house = [content.letters.house.message, content.concise.letters.house.message, content.calls.house, content.posts.house];
+  for (const [from, to] of content.asks.options.vanhollen.edits) {
+    assert.ok(targets.some(t => t.includes(from)), 'edit matches: ' + from);
+    assert.ok(!house.some(t => t.includes(from)), 'House copy is untouched: ' + from);
+    assert.match(to, /Chris Van Hollen/);
+    assert.doesNotMatch(to, /\u2014/);
+  }
+  const swapped = targets.map(t => content.asks.options.vanhollen.edits.reduce((s, [a, b]) => s.split(a).join(b), t));
+  // Every Senate and state-leadership letter body, call and post names Van Hollen after the swap.
+  for (const i of [1, 3, 5, 7, 8, 9, 10, 11]) assert.match(swapped[i], /Chris Van Hollen/, 'target ' + i);
+  for (const t of swapped) assert.ok(crlfLength(t) <= 1900);
+});
+
+test('House copy targets the public floor vote and the status block is sourced', () => {
+  const { content } = load();
+  for (const text of [content.letters.house.message, content.concise.letters.house.message, content.calls.house, content.posts.house]) assert.match(text, /floor/);
+  const status = content.status;
+  assert.match(status.items.map(i => i.text).join(' '), /251 to 11/);
+  assert.equal((status.items[1].text.match(/\((?:N\.Y\.|N\.J\.|Colo\.|Mich\.|Pa\.|Ohio|Calif\.)\)/g) || []).length, 8);
+  for (const source of status.sources) assert.match(source.url, /^https:\/\//);
+  assert.doesNotMatch(JSON.stringify(status), /\u2014/);
 });
