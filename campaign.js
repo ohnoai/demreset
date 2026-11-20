@@ -236,7 +236,7 @@ Thank you,
     items: [
       { label: 'Vote', text: 'On November 10, the House voted 211 to 204 to send the articles of impeachment against Pete Hegseth to committee, shelving them. Rep. Marilyn Strickland (D-Pierce County) was one of 11 Democrats who missed the vote. It passed by seven votes.' },
       { label: 'Excuse', text: 'Her office says she was stuck behind a motorcade and missed the vote by one minute.' },
-      { label: 'Money', text: 'She has taken about $291,000 in AIPAC PAC-linked campaign money since February 2022, according to FEC filings: about $30,000 from the PAC itself and about $261,000 from individual donors that the PAC collected and passed on.' }
+      { label: 'Money', text: "She has taken about $291,000 in AIPAC PAC-linked campaign money since February 2022, all of it reported by AIPAC's PAC in its FEC filings." }
     ],
     sources: [
       { name: 'House Clerk, Roll Call 317', url: 'https://clerk.house.gov/votes/2026317' },
@@ -253,7 +253,7 @@ Thank you,
 
 Your office says you were stuck behind a motorcade and arrived a minute late. You said you take full responsibility. Then take it. Your one job is to show up and vote, and on the vote that mattered most this month, you weren't there.
 
-You have taken about $291,000 in AIPAC PAC-linked campaign money since February 2022, most of it donors' money that AIPAC's PAC collected and passed on to your campaign. When a Democrat who takes that money misses the vote that shelved Hegseth's impeachment, your constituents are entitled to ask who you were really there for.
+You have taken about $291,000 in AIPAC PAC-linked campaign money since February 2022. When a Democrat who takes that money misses the vote that shelved Hegseth's impeachment, your constituents are entitled to ask who you were really there for.
 
 An apology doesn't undo the vote. Tell us what you will do now. Will you cosponsor the next articles of impeachment against Hegseth? Will you stop taking AIPAC-linked money? How will you vote for Speaker on January 3?
 

@@ -6,7 +6,7 @@ test('the Strickland box sits beside the status on wide screens and below it on 
   const box = page.locator('#callout');
   await expect(box).toBeVisible();
   await expect(box.getByRole('heading', { level: 2 })).toHaveText("Strickland didn't show up.");
-  for (const text of ['211 to 204', 'Rep. Marilyn Strickland (D-Pierce County)', 'motorcade', '$291,000', 'about $261,000 from individual donors', 'It passed by seven votes.']) await expect(box).toContainText(text);
+  for (const text of ['211 to 204', 'Rep. Marilyn Strickland (D-Pierce County)', 'motorcade', '$291,000', "reported by AIPAC's PAC in its FEC filings", 'It passed by seven votes.']) await expect(box).toContainText(text);
   await expect(box.locator('#calloutSources a')).toHaveCount(4);
   const a = await page.locator('#status').boundingBox(), b = await box.boundingBox(), steps = await page.locator('#steps').boundingBox();
   if ((page.viewportSize()?.width || 0) >= 900) { expect(Math.abs(a.y - b.y)).toBeLessThan(2); expect(b.x).toBeGreaterThan(a.x + a.width - 1); }

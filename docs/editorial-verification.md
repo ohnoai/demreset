@@ -165,3 +165,5 @@ Earmarked rows are those whose description starts "EARMARK OF". Refunds by the c
 The site now cites the FEC instead of SignalData and says February 2022, the first transaction. It splits the PAC's own money (about $30,000) from donors' money the PAC collected and passed on (about $261,000).
 
 "If all 11 had been there and voted no, it would have failed" was removed. Seven Republicans were also absent, and The Washington Post (as reported by https://sherafy.com/elect-democratic-women-aipac-funding/) argued Republican leaders had enough members nearby to prevail if the vote had stayed open: "That is a plausible scenario, not a record of a vote that actually happened." The site now says only "It passed by seven votes."
+
+The owner rejected the split between the PAC's own money and forwarded donations: every dollar went through AIPAC PAC and is reported in its filings as paid to her campaign. The site now gives the single total, "all of it reported by AIPAC's PAC in its FEC filings." The split stays in the table above for reference.
