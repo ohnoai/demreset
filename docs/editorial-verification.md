@@ -122,3 +122,12 @@ Checked **2026-11-20** from raw page text (no summarizing tool). Supports the `s
     > "Newly-elected Angela Gonzales-Torres of California, a Democratic socialist, revealed on social media on Wednesday afternoon that she also voted “no.”"
 [12] https://www.reuters.com/5f374b32b07b/world/us/chris-van-hollen-announces-run-us-senate-majority-leader-challenging-schumer-2026-11-13/
     > "Closed-door secret-ballot vote to take place next month"
+
+## Republican letters, 2026-11-20
+
+Newhouse (WA-04) and Baumgartner (WA-05) vote on January 3 but not in either Democratic caucus vote. Their letter asks them to vote for a candidate by name, not to vote present, and not to miss the vote, because the Speaker needs a majority of members voting by surname.
+
+- [13] House Practice (118th Congress), ch. 35 "Office of Speaker", https://www.govinfo.gov/content/pkg/GPO-HPRACTICE-118/pdf/GPO-HPRACTICE-118-35.pdf: "Under the modern practice, the Speaker is elected by a majority of Members-elect voting by surname, a quorum being present."
+- [14] Deschler's Precedents, vol. 1, ch. 1 § 6, https://www.govinfo.gov/content/pkg/GPO-HPREC-DESCHLERS-V1/html/GPO-HPREC-DESCHLERS-V1-1-2-6.htm: the Clerk declares the Speaker elected "having received a majority of the votes cast."
+
+The "America First" line is argument, not a factual claim. The letter does not state the House margin, only that "present" votes and absences lower the number Jeffries needs.

@@ -82,7 +82,7 @@ test('every official has the right greeting, request, contact form and phone', a
     await expect(page.locator('#contactLink')).toHaveAttribute('href', o.website);
     const text = await preview(page).textContent();
     expect(text).toContain(o.greeting || o.name.split(' ').at(-1));
-    expect(text).toMatch(o.vote === 'senate' ? /oppose Chuck Schumer/ : o.vote === 'house' ? /oppose Hakeem Jeffries/ : /(?:do not|don't) vote in either (?:congressional )?caucus/);
+    expect(text).toMatch(o.vote === 'senate' ? /oppose Chuck Schumer/ : o.vote === 'house' ? /oppose Hakeem Jeffries/ : o.vote === 'republican' ? /Don't vote present/ : /(?:do not|don't) vote in either (?:congressional )?caucus/);
     await channel(page, 'call');
     await expect(page.locator('#contactLink')).toHaveAttribute('href', 'tel:+1' + o.phone.replace(/\D/g, ''));
     await expect(page.locator('#contactLink')).toHaveText('Call ' + o.phone);

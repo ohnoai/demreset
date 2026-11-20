@@ -54,6 +54,25 @@ Thank you,
 [Your name]
 [Your location]`
     },
+    republican: {
+      subject: "Vote by name for Speaker on January 3",
+      message: `I'm writing as your constituent about the Speaker election on January 3. I'm not asking you to support a Democrat. I'm asking you not to help elect Hakeem Jeffries.
+
+House Democrats nominated Jeffries 251 to 11 on November 18, by secret ballot. That vote was not final. On January 3 the full House votes out loud, by name, and the Speaker needs a majority of the members who vote for a candidate by surname.
+
+A member who votes "present" or misses the vote is not counted. Every one of them lowers the number Jeffries needs. If enough Democrats vote for someone else, the count gets close, and a Republican who votes present or stays home could be the reason he gets the gavel anyway.
+
+Your party campaigns on America First. A Speaker this close to AIPAC and corporate donors is not putting America first. Don't be the vote that hands him the gavel.
+
+Vote for a candidate by name on January 3. Don't vote present, and don't miss the vote.
+
+Reply to this letter with how you will vote on January 3 and why. Your constituents deserve a direct answer, and we will hold you to it.
+
+Thank you,
+
+[Your name]
+[Your location]`
+    },
     influence: {
       subject: "Publicly call for new Democratic congressional leadership",
       message: `I'm writing to ask you to publicly call for new Democratic congressional leadership, replacing both Chuck Schumer and Hakeem Jeffries. Senate Democrats choose their leader in December. The full House elects its Speaker on January 3.
@@ -127,6 +146,21 @@ Thank you,
 [Your name]
 [Your location]`
       },
+      republican: {
+        subject: "Vote by name for Speaker on January 3",
+        message: `I'm your constituent. On January 3, don't help elect Hakeem Jeffries as Speaker.
+
+The Speaker needs a majority of the members who vote for a candidate by name. A "present" vote or an absence is not counted, and every one lowers the number Jeffries needs. If enough Democrats vote for someone else, one Republican who votes present or stays home could hand him the gavel.
+
+Your party campaigns on America First. A Speaker this close to AIPAC and corporate donors is not putting America first.
+
+Vote for a candidate by name. Don't vote present, and don't miss the vote. Reply with how you will vote on January 3 and why.
+
+Thank you,
+
+[Your name]
+[Your location]`
+      },
       influence: {
         subject: "Publicly call for new Democratic congressional leadership",
         message: `I'm writing to ask you to publicly advocate for replacing Chuck Schumer and Hakeem Jeffries as Democratic congressional leaders. Senate Democrats vote in December. The House votes on January 3.
@@ -158,11 +192,13 @@ Thank you,
     }
   },
   calls: {
+    republican: "Hello, my name is [Your name], and I live in [Your location]. My message for [official]: on January 3, vote for a candidate for Speaker by name. Don't vote present, and don't miss the vote. Present votes and absences lower the number Hakeem Jeffries needs to win. Please say publicly how you will vote. Please record my request and get back to me with how they will vote and why.",
     senate: 'Hello, my name is [Your name], and I live in [Your location]. My message for [official]: oppose Chuck Schumer for Senate Democratic leader in the December vote and support a genuine, competitive replacement contest. A new majority is not a mandate to keep him. Please make your position public and explain what measurable commitments you will demand. Please record my request and get back to me with their choice and their reason. Thank you.',
     house: 'Hello, my name is [Your name], and I live in [Your location]. My message for [official]: oppose Hakeem Jeffries for Speaker on the House floor on January 3 and vote for a genuine alternative. Winning back the House is not a vote of confidence in him. The November 18 caucus vote was secret. The floor vote is not. Please make your position public. Please record my request and get back to me with how they voted on November 18, how they will vote on January 3, and why. Thank you.',
     influence: 'Hello, my name is [Your name], and I live in [Your location]. My message for [official]: publicly advocate for replacing both Chuck Schumer and Hakeem Jeffries. I know you do not vote in either caucus election. Use your platform and relationships to urge Washington congressional Democrats to hold competitive leadership elections. Please make your position public and explain what you will do. Please record my request and get back to me with their choice and their reason. Thank you.'
   },
   posts: {
+    republican: "[official] On January 3, vote for a Speaker candidate by name. Don't vote present, and don't miss the vote. Every present vote or absence lowers the number Hakeem Jeffries needs. Reply with your vote and your reason. #DEMRESET",
     senate: '[official] Please oppose Chuck Schumer for Senate Democratic leader. A new majority is not a mandate to keep him. Support a competitive replacement contest and make your position public. Reply with your vote and your reason. #DEMRESET',
     house: '[official] Please oppose Hakeem Jeffries for Speaker on the House floor on January 3. Winning back the House is not a vote of confidence in him. The caucus vote was secret. The floor vote is not. Reply with your vote and your reason. #DEMRESET',
     influence: '[official] Publicly advocate for replacing Chuck Schumer and Hakeem Jeffries. Urge Washington State congressional Democrats to hold competitive leadership elections. Silence is a choice. Reply with your choice and your reason. #DEMRESET'

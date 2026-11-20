@@ -29,6 +29,8 @@
     if (legacy && typeof legacy === 'object') {
       for (const o of allOfficials) {
         const old = legacy.drafts?.[o.group];
+        // Prototype text was written for Democrats; the Republican letter starts fresh.
+        if (o.vote === 'republican') { if (savedActions === null && legacy.progress?.[o.id] === true) actions[`${o.id}:letter`] = true; continue; }
         if (old && ['senate', 'house'].includes(o.group)) {
           for (const field of ['subject', 'message']) if (typeof old[field] === 'string') M.edit(state, o, field, old[field]);
         }
@@ -193,12 +195,12 @@
     const parts = [d.name, d.city, county && (/county$/i.test(county) ? county : county + ' County'), d.zip].map(v => (v || '').trim()).filter(Boolean);
     $('sum1').textContent = parts.length ? '✓ ' + parts.join(' · ') : 'Skipped. Letters will end with [Your name].';
     const rep = repFor(state.district);
-    $('sum2').textContent = !rep ? '' : rep.active !== false ? `✓ ${rep.district} · ${rep.name}` : `✓ ${rep.district} · ${rep.name}, a Republican, so not on your list`;
+    $('sum2').textContent = !rep ? '' : `✓ ${rep.district} · ${rep.name}${rep.party === 'Republican' ? ' (Republican)' : ''}`;
   }
   function choiceButton(rep) {
     const b = document.createElement('button'); b.type = 'button'; b.className = 'btn choice'; b.dataset.district = rep.district;
     b.textContent = `${rep.district} · ${rep.name}`;
-    if (rep.active === false) { const s = document.createElement('span'); s.textContent = 'Republican'; b.append(' ', s); }
+    if (rep.party === 'Republican') { const s = document.createElement('span'); s.textContent = 'Republican'; b.append(' ', s); }
     return b;
   }
   function renderDistrictStep() {
@@ -211,7 +213,7 @@
     if (single) {
       const rep = repFor(districtName(hits[0]));
       $('matchLabel').textContent = `ZIP ${zip} is most likely ${rep.district}. Your representative:`;
-      $('matchName').textContent = rep.name + (rep.active === false ? ' (Republican)' : '');
+      $('matchName').textContent = rep.name + (rep.party === 'Republican' ? ' (Republican)' : '');
       $('confirmDistrict').dataset.district = rep.district;
       return;
     }
