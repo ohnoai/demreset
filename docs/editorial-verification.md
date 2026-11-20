@@ -148,3 +148,20 @@ The "America First" line is argument, not a factual claim. The letter does not s
     > "According to SignalData’s review of Federal Election Commission filings, 10 of the 11 absent Democrats received money through AIPAC PAC between January 2022 and October 14, 2026. The figures include contributions from the PAC itself as well as individual donations earmarked through the PAC and forwarded to candidates."
 
 The $291,000 figure is secondary: SignalData's review as reported by IBTimes UK and McGill Media, not checked against FEC filings directly. The owner's brief said "since December 2021"; the sources say January 2022, which the site uses. "If all 11 had been there and voted no, it would have failed" is arithmetic: 211 yea against 204 + 11 = 215 nay.
+
+### FEC check of the $291,000, 2026-11-20
+
+Checked against the FEC's own data: AIPAC PAC (C00797670) Schedule B disbursements to Strickland for Washington (C00732826), cycles 2022 to 2026, via api.open.fec.gov. 272 transactions, 2022-02-22 to 2026-09-30, total $290,583.43:
+
+| Cycle | PAC's own contributions | Earmarked individual donations forwarded |
+| --- | --- | --- |
+| 2022 | $10,000.00 | $15,150.00 |
+| 2024 | $10,000.00 | $137,756.93 |
+| 2026 | $9,818.48 | $107,858.02 |
+| Total | $29,818.48 | $260,764.95 |
+
+Earmarked rows are those whose description starts "EARMARK OF". Refunds by the campaign are not netted. Public view (272 rows): https://www.fec.gov/data/disbursements/?committee_id=C00797670&recipient_name=STRICKLAND+FOR+WASHINGTON&two_year_transaction_period=2026&two_year_transaction_period=2024&two_year_transaction_period=2022
+
+The site now cites the FEC instead of SignalData and says February 2022, the first transaction. It splits the PAC's own money (about $30,000) from donors' money the PAC collected and passed on (about $261,000).
+
+"If all 11 had been there and voted no, it would have failed" was removed. Seven Republicans were also absent, and The Washington Post (as reported by https://sherafy.com/elect-democratic-women-aipac-funding/) argued Republican leaders had enough members nearby to prevail if the vote had stayed open: "That is a plausible scenario, not a record of a vote that actually happened." The site now says only "It passed by seven votes."

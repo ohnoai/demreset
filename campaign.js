@@ -234,26 +234,26 @@ Thank you,
     eyebrow: 'WA-10 · UPDATED NOVEMBER 20, 2026',
     title: "Strickland didn't show up.",
     items: [
-      { label: 'Vote', text: 'On November 10, the House voted 211 to 204 to send the articles of impeachment against Pete Hegseth to committee, shelving them. Rep. Marilyn Strickland (D-Pierce County) was one of 11 Democrats who missed the vote. If all 11 had been there and voted no, it would have failed.' },
+      { label: 'Vote', text: 'On November 10, the House voted 211 to 204 to send the articles of impeachment against Pete Hegseth to committee, shelving them. Rep. Marilyn Strickland (D-Pierce County) was one of 11 Democrats who missed the vote. It passed by seven votes.' },
       { label: 'Excuse', text: 'Her office says she was stuck behind a motorcade and missed the vote by one minute.' },
-      { label: 'Money', text: 'She has taken about $291,000 in AIPAC PAC-linked campaign money since January 2022, according to a SignalData review of FEC filings.' }
+      { label: 'Money', text: 'She has taken about $291,000 in AIPAC PAC-linked campaign money since February 2022, according to FEC filings: about $30,000 from the PAC itself and about $261,000 from individual donors that the PAC collected and passed on.' }
     ],
     sources: [
       { name: 'House Clerk, Roll Call 317', url: 'https://clerk.house.gov/votes/2026317' },
       { name: 'Seattle Times', url: 'https://www.seattletimes.com/seattle-news/politics/house-blocks-hegseth-impeachment-effort-strickland-absent/' },
       { name: 'Washington State Standard', url: 'https://www.dnews.com/northwest/wash-congresswoman-sorry-for-missing-hegseth-impeachment-vote-ba2c6b87/' },
-      { name: 'IBTimes UK', url: 'https://www.ibtimes.co.uk/haley-stevens-democrats-hegseth-impeachment-aipac-1831591' }
+      { name: 'FEC, AIPAC PAC to Strickland', url: 'https://www.fec.gov/data/disbursements/?committee_id=C00797670&recipient_name=STRICKLAND+FOR+WASHINGTON&two_year_transaction_period=2026&two_year_transaction_period=2024&two_year_transaction_period=2022' }
     ],
     action: 'Write Strickland a letter',
     dialogTitle: 'Your letter to Rep. Strickland',
     note: "House contact forms usually take messages only from people in the district. If you're not in WA-10, you can still call her office.",
     letter: {
       subject: 'You missed the Hegseth vote',
-      message: `I'm writing to repudiate your absence on November 10, when the House voted 211 to 204 to send the articles of impeachment against Pete Hegseth to committee and shelve them. You were one of 11 Democrats who missed that vote. If all 11 had been there and voted no, it would have failed.
+      message: `I'm writing to repudiate your absence on November 10, when the House voted 211 to 204 to send the articles of impeachment against Pete Hegseth to committee and shelve them. It passed by seven votes, and you were one of 11 Democrats who missed it.
 
 Your office says you were stuck behind a motorcade and arrived a minute late. You said you take full responsibility. Then take it. Your one job is to show up and vote, and on the vote that mattered most this month, you weren't there.
 
-You have taken about $291,000 in AIPAC PAC-linked campaign money since January 2022. When a Democrat who takes that money misses the vote that shelved Hegseth's impeachment, your constituents are entitled to ask who you were really there for.
+You have taken about $291,000 in AIPAC PAC-linked campaign money since February 2022, most of it donors' money that AIPAC's PAC collected and passed on to your campaign. When a Democrat who takes that money misses the vote that shelved Hegseth's impeachment, your constituents are entitled to ask who you were really there for.
 
 An apology doesn't undo the vote. Tell us what you will do now. Will you cosponsor the next articles of impeachment against Hegseth? Will you stop taking AIPAC-linked money? How will you vote for Speaker on January 3?
 
