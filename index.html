@@ -52,15 +52,17 @@
     <section class="status" id="status" aria-labelledby="statusTitle" hidden>
       <p class="eyebrow" id="statusEyebrow"></p>
       <h2 id="statusTitle"></h2>
-      <dl id="statusItems"></dl>
-      <p class="note" id="statusSources"></p>
+      <button type="button" class="status-toggle" aria-expanded="false" aria-controls="statusItems statusSources">Show details</button>
+      <dl id="statusItems" class="status-more"></dl>
+      <p class="note status-more" id="statusSources"></p>
     </section>
     <section class="status callout" id="callout" aria-labelledby="calloutTitle" hidden>
       <p class="eyebrow" id="calloutEyebrow"></p>
       <h2 id="calloutTitle"></h2>
-      <dl id="calloutItems"></dl>
+      <button type="button" class="status-toggle" aria-expanded="false" aria-controls="calloutItems calloutSources">Show details</button>
+      <dl id="calloutItems" class="status-more"></dl>
       <a class="btn go" id="calloutOpen"></a>
-      <p class="note" id="calloutSources"></p>
+      <p class="note status-more" id="calloutSources"></p>
     </section>
     </div>
     <noscript><p class="notice">JavaScript is needed for the steps below. You can still <a href="https://app.leg.wa.gov/DistrictFinder/">find your district</a> and contact Congress through its official websites.</p></noscript>

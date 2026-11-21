@@ -186,6 +186,14 @@
     $('calloutOpen').textContent = callout.action;
     $('calloutOpen').href = callout.page;
   }
+  // On phones the update boxes start collapsed to their headline; the toggle only shows there (styles.css).
+  for (const toggle of document.querySelectorAll('.status-row .status-toggle')) {
+    toggle.onclick = () => {
+      const open = toggle.closest('.status').classList.toggle('open');
+      toggle.setAttribute('aria-expanded', String(open));
+      toggle.textContent = open ? 'Hide details' : 'Show details';
+    };
+  }
   const askOptions = Object.entries(T.asks?.options || {});
   $('askRow').hidden = askOptions.length < 2;
   if (!T.asks?.options?.[state.ask]) state.ask = askOptions[0]?.[0] || 'oppose';

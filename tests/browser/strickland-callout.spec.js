@@ -60,3 +60,22 @@ test('/strickland warns about the district and offers the call before the letter
   expect(warning.y + warning.height).toBeLessThanOrEqual(name.y);
   expect(warning.y + warning.height).toBeLessThanOrEqual(letter.y);
 });
+
+test('on phones both update boxes start collapsed to their headline and expand on tap; on desktop they are open', async ({ page }) => {
+  await page.goto('/');
+  const phone = (page.viewportSize()?.width || 0) < 900;
+  for (const id of ['status', 'callout']) {
+    const box = page.locator('#' + id), toggle = box.locator('.status-toggle'), items = box.locator('dl');
+    await expect(box.getByRole('heading', { level: 2 })).toBeVisible();
+    if (!phone) { await expect(toggle).toBeHidden(); await expect(items).toBeVisible(); continue; }
+    await expect(items).toBeHidden();
+    await expect(toggle).toHaveAttribute('aria-expanded', 'false');
+    await toggle.click();
+    await expect(items).toBeVisible();
+    await expect(box.locator('.note a').first()).toBeVisible();
+    await expect(toggle).toHaveAttribute('aria-expanded', 'true');
+    await expect(toggle).toHaveText('Hide details');
+  }
+  await expect(page.locator('#calloutOpen')).toBeVisible();
+  await axe(page);
+});
