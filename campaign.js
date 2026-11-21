@@ -254,7 +254,7 @@ Thank you,
 
 Your office says you were stuck behind a motorcade and arrived a minute late. That is not an excuse. Cutting it that close on a vote this important is a failure to prepare, and it had consequences: with you and 10 other Democrats absent, Hegseth was spared an immediate rebuke over the war in Iran, and his impeachment is shelved until January. You said you take full responsibility. Then take it. Your one job is to show up and vote, and on the vote that mattered most this month, you weren't there.
 
-You have taken about $291,000 in AIPAC PAC-linked campaign money since February 2022. That is public record, in AIPAC's own FEC filings. When a Democrat who takes that money misses the vote that shelved Hegseth's impeachment, your constituents are entitled to ask who you were really there for.
+You have taken about $291,000 in AIPAC PAC-linked campaign money since February 2022. That is public record, in AIPAC's own FEC filings. When a Democrat who takes that money doesn't show up for the vote that shelved Hegseth's impeachment, your constituents are entitled to ask who you really work for.
 
 An apology doesn't undo the vote. Tell us who you are beholden to: your constituents, or AIPAC? Then tell us what you will do now. Will you cosponsor the next articles of impeachment against Hegseth? Will you stop taking AIPAC-linked money? How will you vote for Speaker on January 3?
 
