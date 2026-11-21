@@ -250,7 +250,6 @@ Thank you,
     note: 'House contact forms usually take messages only from people in the district.',
     callNote: 'Not in WA-10? Call her office instead.',
     letter: {
-      subject: 'You missed the Hegseth vote',
       message: `I'm writing to repudiate your absence on November 10, when the House voted 211 to 204 to send the articles of impeachment against Pete Hegseth to committee and shelve them. It passed by seven votes, and you were one of 11 Democrats who missed it.
 
 Your office says you were stuck behind a motorcade and arrived a minute late. That is not an excuse. Cutting it that close on a vote this important is a failure to prepare, and it had consequences: with you and 10 other Democrats absent, Hegseth was spared an immediate rebuke over the war in Iran, and his impeachment is shelved until January. You said you take full responsibility. Then take it. Your one job is to show up and vote, and on the vote that mattered most this month, you weren't there.

@@ -39,7 +39,6 @@
     const name = details.name.trim() || '[Your name]';
     $('calloutBody').value = greeting + '\n\n' + callout.letter.message.replace('[Your name]', name).replace('[Your location]', M.location(details));
   }
-  $('calloutSubject').value = callout.letter.subject;
   render();
   for (const id of ['letterName', 'letterCity', 'letterZip']) $(id).addEventListener('input', render);
   // Once the visitor edits the letter itself, the detail fields stop overwriting it.

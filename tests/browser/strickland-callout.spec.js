@@ -22,7 +22,8 @@ test('/strickland stands alone: sourced box, letter with her greeting, her conta
   await page.goto('/strickland');
   await expect(page).toHaveTitle("Strickland didn't show up · DEM RESET");
   await expect(page.locator('#calloutSources a')).toHaveCount(4);
-  await expect(page.locator('#calloutSubject')).toHaveValue('You missed the Hegseth vote');
+  // Her form has no subject field (checked 2026-11-20), so the page offers none.
+  await expect(page.locator('#calloutSubject')).toHaveCount(0);
   const body = await page.locator('#calloutBody').inputValue();
   expect(body).toMatch(/^Dear Representative Strickland,\n\nI'm writing to repudiate your absence on November 10/);
   expect(body).toMatch(/\[Your name\]\n\[Your location\]$/);
