@@ -108,10 +108,12 @@
           <div class="ask" id="askRow" role="group" aria-labelledby="askLabel"><p class="k" id="askLabel"></p><div class="ask-choices" id="askChoices"></div><p class="note" id="askNote"></p></div>
           <div class="tabs" role="group" aria-label="How to contact"><button type="button" data-channel="letter">Letter</button><button type="button" data-channel="call">Call</button><button type="button" data-channel="social">Social</button></div>
           <div class="length" id="letterVersion" role="group" aria-label="Letter length"><button type="button" data-version="full">Full letter</button><button type="button" data-version="concise">Concise</button></div>
-          <div class="subject" id="subjectRow"><p><span class="k">Subject</span> <span id="subjectText"></span></p><button type="button" class="link" id="copySubject">Copy subject</button></div>
-          <p class="note" id="subjectHelp" hidden></p>
           <div class="texthead"><strong id="textLabel"></strong><button type="button" class="link" id="editText">Edit</button></div>
-          <button type="button" class="preview" id="preview" aria-describedby="previewHint"></button>
+          <div class="letter-card">
+            <div class="subject" id="subjectRow"><p><span class="k">Subject</span> <span id="subjectText"></span></p><button type="button" class="copy-subject" id="copySubject">Copy subject</button></div>
+            <button type="button" class="preview" id="preview" aria-describedby="previewHint"></button>
+          </div>
+          <p class="note" id="subjectHelp" hidden></p>
           <p class="sr-only" id="previewHint">Opens the text to read in full or edit.</p>
           <div id="recipientReview" class="notice" hidden>
             <p id="reviewExplanation"></p>

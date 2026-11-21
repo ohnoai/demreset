@@ -328,6 +328,8 @@
     $('copySubject').hidden = noTextSubject;
     $('subjectHelp').hidden = !noTextSubject; $('subjectHelp').textContent = noTextSubject ? subject.help : '';
     $('textLabel').textContent = { letter: `Your letter (${state.letterVersion === 'concise' ? 'concise' : 'full'})`, call: 'Your call script', social: 'Your post' }[channel];
+    // The subject sits in the same card as the letter, and one Edit changes both.
+    $('editText').textContent = channel === 'letter' ? 'Edit subject & letter' : 'Edit';
     $('preview').textContent = t[channel];
     $('copyText').textContent = { letter: 'Copy letter', call: 'Copy script', social: 'Copy post' }[channel];
     const link = $('contactLink'), phone = o.phone ? '+1' + o.phone.replace(/\D/g, '').replace(/^1(?=\d{10}$)/, '') : '';
