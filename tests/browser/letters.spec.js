@@ -187,3 +187,20 @@ test('the edit dialog and every channel are accessible and fit small screens', a
   await page.click('#editText'); await axe(page);
   await expect(page.locator('#editBody')).toHaveAccessibleName(/Post/);
 });
+
+test('the subject is the first line of the letter card, with its own copy button, and Edit names both', async ({ page }) => {
+  await start(page, 'WA-07');
+  const card = page.locator('.letter-card');
+  await expect(card.locator('#subjectText')).toHaveText('Oppose Chuck Schumer for Democratic leader');
+  await expect(card.locator('#copySubject')).toBeVisible();
+  const subject = await card.locator('#subjectRow').boundingBox(), letter = await card.locator('#preview').boundingBox();
+  expect(subject.y + subject.height).toBeLessThanOrEqual(letter.y + 1);
+  await expect(page.locator('#editText')).toHaveText('Edit subject & letter');
+  await page.click('#editText');
+  await expect(page.locator('#editSubject')).toHaveValue('Oppose Chuck Schumer for Democratic leader');
+  await page.click('#cancelEdit');
+  await channel(page, 'call');
+  await expect(page.locator('#subjectRow')).toBeHidden();
+  await expect(page.locator('#editText')).toHaveText('Edit');
+  await axe(page);
+});

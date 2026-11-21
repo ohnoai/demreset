@@ -186,6 +186,14 @@
     $('calloutOpen').textContent = callout.action;
     $('calloutOpen').href = callout.page;
   }
+  // On phones the update boxes start collapsed to their headline; the toggle only shows there (styles.css).
+  for (const toggle of document.querySelectorAll('.status-row .status-toggle')) {
+    toggle.onclick = () => {
+      const open = toggle.closest('.status').classList.toggle('open');
+      toggle.setAttribute('aria-expanded', String(open));
+      toggle.textContent = open ? 'Hide details' : 'Show details';
+    };
+  }
   const askOptions = Object.entries(T.asks?.options || {});
   $('askRow').hidden = askOptions.length < 2;
   if (!T.asks?.options?.[state.ask]) state.ask = askOptions[0]?.[0] || 'oppose';
@@ -320,6 +328,8 @@
     $('copySubject').hidden = noTextSubject;
     $('subjectHelp').hidden = !noTextSubject; $('subjectHelp').textContent = noTextSubject ? subject.help : '';
     $('textLabel').textContent = { letter: `Your letter (${state.letterVersion === 'concise' ? 'concise' : 'full'})`, call: 'Your call script', social: 'Your post' }[channel];
+    // The subject sits in the same card as the letter, and one Edit changes both.
+    $('editText').textContent = channel === 'letter' ? 'Edit subject & letter' : 'Edit';
     $('preview').textContent = t[channel];
     $('copyText').textContent = { letter: 'Copy letter', call: 'Copy script', social: 'Copy post' }[channel];
     const link = $('contactLink'), phone = o.phone ? '+1' + o.phone.replace(/\D/g, '').replace(/^1(?=\d{10}$)/, '') : '';

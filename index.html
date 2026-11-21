@@ -52,15 +52,17 @@
     <section class="status" id="status" aria-labelledby="statusTitle" hidden>
       <p class="eyebrow" id="statusEyebrow"></p>
       <h2 id="statusTitle"></h2>
-      <dl id="statusItems"></dl>
-      <p class="note" id="statusSources"></p>
+      <button type="button" class="status-toggle" aria-expanded="false" aria-controls="statusItems statusSources">Show details</button>
+      <dl id="statusItems" class="status-more"></dl>
+      <p class="note status-more" id="statusSources"></p>
     </section>
     <section class="status callout" id="callout" aria-labelledby="calloutTitle" hidden>
       <p class="eyebrow" id="calloutEyebrow"></p>
       <h2 id="calloutTitle"></h2>
-      <dl id="calloutItems"></dl>
+      <button type="button" class="status-toggle" aria-expanded="false" aria-controls="calloutItems calloutSources">Show details</button>
+      <dl id="calloutItems" class="status-more"></dl>
       <a class="btn go" id="calloutOpen"></a>
-      <p class="note" id="calloutSources"></p>
+      <p class="note status-more" id="calloutSources"></p>
     </section>
     </div>
     <noscript><p class="notice">JavaScript is needed for the steps below. You can still <a href="https://app.leg.wa.gov/DistrictFinder/">find your district</a> and contact Congress through its official websites.</p></noscript>
@@ -106,10 +108,12 @@
           <div class="ask" id="askRow" role="group" aria-labelledby="askLabel"><p class="k" id="askLabel"></p><div class="ask-choices" id="askChoices"></div><p class="note" id="askNote"></p></div>
           <div class="tabs" role="group" aria-label="How to contact"><button type="button" data-channel="letter">Letter</button><button type="button" data-channel="call">Call</button><button type="button" data-channel="social">Social</button></div>
           <div class="length" id="letterVersion" role="group" aria-label="Letter length"><button type="button" data-version="full">Full letter</button><button type="button" data-version="concise">Concise</button></div>
-          <div class="subject" id="subjectRow"><p><span class="k">Subject</span> <span id="subjectText"></span></p><button type="button" class="link" id="copySubject">Copy subject</button></div>
-          <p class="note" id="subjectHelp" hidden></p>
           <div class="texthead"><strong id="textLabel"></strong><button type="button" class="link" id="editText">Edit</button></div>
-          <button type="button" class="preview" id="preview" aria-describedby="previewHint"></button>
+          <div class="letter-card">
+            <div class="subject" id="subjectRow"><p><span class="k">Subject</span> <span id="subjectText"></span></p><button type="button" class="copy-subject" id="copySubject">Copy subject</button></div>
+            <button type="button" class="preview" id="preview" aria-describedby="previewHint"></button>
+          </div>
+          <p class="note" id="subjectHelp" hidden></p>
           <p class="sr-only" id="previewHint">Opens the text to read in full or edit.</p>
           <div id="recipientReview" class="notice" hidden>
             <p id="reviewExplanation"></p>

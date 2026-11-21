@@ -22,7 +22,8 @@ test('/strickland stands alone: sourced box, letter with her greeting, her conta
   await page.goto('/strickland');
   await expect(page).toHaveTitle("Strickland didn't show up · DEM RESET");
   await expect(page.locator('#calloutSources a')).toHaveCount(4);
-  await expect(page.locator('#calloutSubject')).toHaveValue('You missed the Hegseth vote');
+  // Her form has no subject field (checked 2026-11-20), so the page offers none.
+  await expect(page.locator('#calloutSubject')).toHaveCount(0);
   const body = await page.locator('#calloutBody').inputValue();
   expect(body).toMatch(/^Dear Representative Strickland,\n\nI'm writing to repudiate your absence on November 10/);
   expect(body).toMatch(/\[Your name\]\n\[Your location\]$/);
@@ -59,4 +60,23 @@ test('/strickland warns about the district and offers the call before the letter
   const warning = await call.boundingBox(), name = await page.locator('#letterName').boundingBox(), letter = await page.locator('#calloutBody').boundingBox();
   expect(warning.y + warning.height).toBeLessThanOrEqual(name.y);
   expect(warning.y + warning.height).toBeLessThanOrEqual(letter.y);
+});
+
+test('on phones both update boxes start collapsed to their headline and expand on tap; on desktop they are open', async ({ page }) => {
+  await page.goto('/');
+  const phone = (page.viewportSize()?.width || 0) < 900;
+  for (const id of ['status', 'callout']) {
+    const box = page.locator('#' + id), toggle = box.locator('.status-toggle'), items = box.locator('dl');
+    await expect(box.getByRole('heading', { level: 2 })).toBeVisible();
+    if (!phone) { await expect(toggle).toBeHidden(); await expect(items).toBeVisible(); continue; }
+    await expect(items).toBeHidden();
+    await expect(toggle).toHaveAttribute('aria-expanded', 'false');
+    await toggle.click();
+    await expect(items).toBeVisible();
+    await expect(box.locator('.note a').first()).toBeVisible();
+    await expect(toggle).toHaveAttribute('aria-expanded', 'true');
+    await expect(toggle).toHaveText('Hide details');
+  }
+  await expect(page.locator('#calloutOpen')).toBeVisible();
+  await axe(page);
 });

@@ -203,3 +203,42 @@ footer p{font-size:12px;color:var(--muted);margin:0}footer p a,footer p .link{co
 .callout-call{display:flex;flex-wrap:wrap;align-items:center;gap:10px 16px;margin:0 0 8px;padding:14px 16px;border:1px solid var(--rule);border-left:4px solid var(--accent);border-radius:6px}
 .callout-call p{margin:0;flex:1 1 280px;line-height:1.45}
 .callout-home{margin:8px 0 32px;max-width:760px}
+/* Compact update boxes on the home page: smaller type, card edges, clear space between them. */
+.status-row{gap:14px 20px;margin:4px 0 20px}
+.status-row .status{margin:0;padding:14px 16px 12px;background:var(--panel);border:1px solid var(--rule);border-left:4px solid var(--accent);border-radius:8px}
+.status-row .status .eyebrow{font-size:11px;margin-bottom:6px}
+.status-row .status h2{font-size:clamp(22px,2.6vw,26px);margin:0 0 10px}
+.status-row .status dl{gap:8px}
+.status-row .status dl div{grid-template-columns:62px 1fr;gap:10px}
+.status-row .status dt{font-size:11px;padding-top:2px}
+.status-row .status dd{font-size:14px;line-height:1.45}
+.status-row .status .note{font-size:12px;margin:10px 0 0}
+.status-row .callout .btn.go{min-height:44px;font-size:15px;margin:12px 0 0;padding:8px 14px}
+@media(max-width:480px){.status-row .status dl div{grid-template-columns:1fr;gap:1px}}
+/* Side by side, both boxes take the taller one's height; sources sit on the bottom edge of each. */
+@media(min-width:900px){.status-row{align-items:stretch}.status-row .status{display:flex;flex-direction:column}.status-row .status .note{margin-top:auto;padding-top:10px}}
+/* Phones: each update box collapses to its eyebrow, headline and toggle (the Strickland letter button stays). */
+.status-toggle{display:none}
+@media(max-width:899px){
+  .status-row .status-toggle{display:inline-flex;align-items:center;gap:6px;min-height:40px;padding:6px 12px;margin:0;background:none;border:1px solid var(--rule);border-radius:99px;color:var(--paper);font-size:13px;font-weight:700}
+  .status-row .status-toggle::after{content:'';width:7px;height:7px;border-right:2px solid currentColor;border-bottom:2px solid currentColor;transform:translateY(-2px) rotate(45deg)}
+  .status-row .status.open .status-toggle::after{transform:translateY(2px) rotate(-135deg)}
+  .status-row .status:not(.open) .status-more{display:none}
+  .status-row .status.open .status-toggle{margin-bottom:10px}
+  .status-row .status h2{margin-bottom:8px}
+}
+/* /strickland: Copy letter keeps its size; the contact-form button fills the rest of the same row. */
+.callout-letter .row{flex-wrap:nowrap;align-items:stretch}
+.callout-letter .row .btn{flex:none}
+.callout-letter .row .btn.go{flex:1 1 0;min-width:0;width:auto;min-height:52px}
+@media(max-width:480px){.callout-letter .row .btn.go{font-size:15px;padding:8px 10px}}
+/* Step 3: the subject is the first line of the same light card as the letter, so they read as one message. */
+.letter-card{background:var(--paper);color:#222;border-radius:8px;overflow:hidden}
+.letter-card .preview{border-radius:0}
+.letter-card .subject{margin:0;padding:12px 18px;border-bottom:1px solid #0000002e;color:#222}
+.letter-card .subject p{font-weight:700;line-height:1.4}
+.letter-card .subject .k{color:#55574f}
+.copy-subject{flex:none;min-height:36px;padding:4px 12px;border:2px solid #222;border-radius:6px;background:none;color:#222;font-weight:700;font-size:14px}
+.copy-subject:hover{background:#222;color:var(--paper)}
+.copy-subject:focus-visible{outline:3px solid #222;outline-offset:2px}
+.letter-card + .note{margin-top:8px}
