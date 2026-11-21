@@ -227,3 +227,8 @@ footer p{font-size:12px;color:var(--muted);margin:0}footer p a,footer p .link{co
   .status-row .status.open .status-toggle{margin-bottom:10px}
   .status-row .status h2{margin-bottom:8px}
 }
+/* /strickland: Copy letter keeps its size; the contact-form button fills the rest of the same row. */
+.callout-letter .row{flex-wrap:nowrap;align-items:stretch}
+.callout-letter .row .btn{flex:none}
+.callout-letter .row .btn.go{flex:1 1 0;min-width:0;width:auto;min-height:52px}
+@media(max-width:480px){.callout-letter .row .btn.go{font-size:15px;padding:8px 10px}}
