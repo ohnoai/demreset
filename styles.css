@@ -203,3 +203,15 @@ footer p{font-size:12px;color:var(--muted);margin:0}footer p a,footer p .link{co
 .callout-call{display:flex;flex-wrap:wrap;align-items:center;gap:10px 16px;margin:0 0 8px;padding:14px 16px;border:1px solid var(--rule);border-left:4px solid var(--accent);border-radius:6px}
 .callout-call p{margin:0;flex:1 1 280px;line-height:1.45}
 .callout-home{margin:8px 0 32px;max-width:760px}
+/* Compact update boxes on the home page: smaller type, card edges, clear space between them. */
+.status-row{gap:14px 20px;margin:4px 0 20px}
+.status-row .status{margin:0;padding:14px 16px 12px;background:var(--panel);border:1px solid var(--rule);border-left:4px solid var(--accent);border-radius:8px}
+.status-row .status .eyebrow{font-size:11px;margin-bottom:6px}
+.status-row .status h2{font-size:clamp(22px,2.6vw,26px);margin:0 0 10px}
+.status-row .status dl{gap:8px}
+.status-row .status dl div{grid-template-columns:62px 1fr;gap:10px}
+.status-row .status dt{font-size:11px;padding-top:2px}
+.status-row .status dd{font-size:14px;line-height:1.45}
+.status-row .status .note{font-size:12px;margin:10px 0 0}
+.status-row .callout .btn.go{min-height:44px;font-size:15px;margin:12px 0 0;padding:8px 14px}
+@media(max-width:480px){.status-row .status dl div{grid-template-columns:1fr;gap:1px}}
