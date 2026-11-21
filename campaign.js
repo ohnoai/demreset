@@ -247,7 +247,8 @@ Thank you,
     action: 'Write Strickland a letter',
     page: '/strickland',
     dialogTitle: 'Your letter to Rep. Strickland',
-    note: "House contact forms usually take messages only from people in the district. If you're not in WA-10, you can still call her office.",
+    note: 'House contact forms usually take messages only from people in the district.',
+    callNote: 'Not in WA-10? Call her office instead.',
     letter: {
       subject: 'You missed the Hegseth vote',
       message: `I'm writing to repudiate your absence on November 10, when the House voted 211 to 204 to send the articles of impeachment against Pete Hegseth to committee and shelve them. It passed by seven votes, and you were one of 11 Democrats who missed it.

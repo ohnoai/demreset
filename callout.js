@@ -18,6 +18,7 @@
   }));
   $('letterTitle').textContent = callout.dialogTitle || callout.action;
   $('calloutNote').textContent = callout.note || '';
+  $('calloutCallNote').textContent = callout.callNote || '';
   $('calloutForm').href = official.website;
   $('calloutCall').href = 'tel:+1' + official.phone.replace(/\D/g, '');
   $('calloutCall').textContent = 'Call ' + official.phone;

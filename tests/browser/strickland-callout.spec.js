@@ -50,3 +50,12 @@ test('/strickland fills in details saved on the main page and never writes stora
   await expect(page.locator('#calloutBody')).toHaveValue('My own letter');
   expect(await page.evaluate(() => JSON.stringify(localStorage))).toBe(before);
 });
+
+test('/strickland puts the out-of-district call prompt right next to the call button', async ({ page }) => {
+  await page.goto('/strickland');
+  const call = page.locator('.callout-call');
+  await expect(call.locator('p')).toHaveText('Not in WA-10? Call her office instead.');
+  await expect(call.locator('#calloutCall')).toHaveText(/^Call /);
+  const note = await call.locator('p').boundingBox(), button = await call.locator('#calloutCall').boundingBox();
+  expect(Math.abs(button.y - (note.y + note.height))).toBeLessThan(60);
+});
