@@ -50,3 +50,13 @@ test('/strickland fills in details saved on the main page and never writes stora
   await expect(page.locator('#calloutBody')).toHaveValue('My own letter');
   expect(await page.evaluate(() => JSON.stringify(localStorage))).toBe(before);
 });
+
+test('/strickland warns about the district and offers the call before the letter, not after', async ({ page }) => {
+  await page.goto('/strickland');
+  const call = page.locator('.callout-call');
+  await expect(call.locator('p')).toHaveText('House contact forms usually take messages only from people in the district. Not in WA-10? Call her office instead.');
+  await expect(call.locator('#calloutCall')).toHaveText(/^Call /);
+  const warning = await call.boundingBox(), name = await page.locator('#letterName').boundingBox(), letter = await page.locator('#calloutBody').boundingBox();
+  expect(warning.y + warning.height).toBeLessThanOrEqual(name.y);
+  expect(warning.y + warning.height).toBeLessThanOrEqual(letter.y);
+});
