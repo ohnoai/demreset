@@ -54,6 +54,25 @@ Thank you,
 [Your name]
 [Your location]`
     },
+    republican: {
+      subject: "Vote by name for Speaker on January 3",
+      message: `I'm writing as your constituent about the Speaker election on January 3. I'm not asking you to support a Democrat. I'm asking you not to help elect Hakeem Jeffries.
+
+House Democrats nominated Jeffries 251 to 11 on November 18, by secret ballot. That vote was not final. On January 3 the full House votes out loud, by name, and the Speaker needs a majority of the members who vote for a candidate by surname.
+
+A member who votes "present" or misses the vote is not counted. Every one of them lowers the number Jeffries needs. If enough Democrats vote for someone else, the count gets close, and a Republican who votes present or stays home could be the reason he gets the gavel anyway.
+
+Your party campaigns on America First. A Speaker this close to AIPAC and corporate donors is not putting America first. Don't be the vote that hands him the gavel.
+
+Vote for a candidate by name on January 3. Don't vote present, and don't miss the vote.
+
+Reply to this letter with how you will vote on January 3 and why. Your constituents deserve a direct answer, and we will hold you to it.
+
+Thank you,
+
+[Your name]
+[Your location]`
+    },
     influence: {
       subject: "Publicly call for new Democratic congressional leadership",
       message: `I'm writing to ask you to publicly call for new Democratic congressional leadership, replacing both Chuck Schumer and Hakeem Jeffries. Senate Democrats choose their leader in December. The full House elects its Speaker on January 3.
@@ -127,6 +146,21 @@ Thank you,
 [Your name]
 [Your location]`
       },
+      republican: {
+        subject: "Vote by name for Speaker on January 3",
+        message: `I'm your constituent. On January 3, don't help elect Hakeem Jeffries as Speaker.
+
+The Speaker needs a majority of the members who vote for a candidate by name. A "present" vote or an absence is not counted, and every one lowers the number Jeffries needs. If enough Democrats vote for someone else, one Republican who votes present or stays home could hand him the gavel.
+
+Your party campaigns on America First. A Speaker this close to AIPAC and corporate donors is not putting America first.
+
+Vote for a candidate by name. Don't vote present, and don't miss the vote. Reply with how you will vote on January 3 and why.
+
+Thank you,
+
+[Your name]
+[Your location]`
+      },
       influence: {
         subject: "Publicly call for new Democratic congressional leadership",
         message: `I'm writing to ask you to publicly advocate for replacing Chuck Schumer and Hakeem Jeffries as Democratic congressional leaders. Senate Democrats vote in December. The House votes on January 3.
@@ -158,11 +192,13 @@ Thank you,
     }
   },
   calls: {
+    republican: "Hello, my name is [Your name], and I live in [Your location]. My message for [official]: on January 3, vote for a candidate for Speaker by name. Don't vote present, and don't miss the vote. Present votes and absences lower the number Hakeem Jeffries needs to win. Please say publicly how you will vote. Please record my request and get back to me with how they will vote and why.",
     senate: 'Hello, my name is [Your name], and I live in [Your location]. My message for [official]: oppose Chuck Schumer for Senate Democratic leader in the December vote and support a genuine, competitive replacement contest. A new majority is not a mandate to keep him. Please make your position public and explain what measurable commitments you will demand. Please record my request and get back to me with their choice and their reason. Thank you.',
     house: 'Hello, my name is [Your name], and I live in [Your location]. My message for [official]: oppose Hakeem Jeffries for Speaker on the House floor on January 3 and vote for a genuine alternative. Winning back the House is not a vote of confidence in him. The November 18 caucus vote was secret. The floor vote is not. Please make your position public. Please record my request and get back to me with how they voted on November 18, how they will vote on January 3, and why. Thank you.',
     influence: 'Hello, my name is [Your name], and I live in [Your location]. My message for [official]: publicly advocate for replacing both Chuck Schumer and Hakeem Jeffries. I know you do not vote in either caucus election. Use your platform and relationships to urge Washington congressional Democrats to hold competitive leadership elections. Please make your position public and explain what you will do. Please record my request and get back to me with their choice and their reason. Thank you.'
   },
   posts: {
+    republican: "[official] On January 3, vote for a Speaker candidate by name. Don't vote present, and don't miss the vote. Every present vote or absence lowers the number Hakeem Jeffries needs. Reply with your vote and your reason. #DEMRESET",
     senate: '[official] Please oppose Chuck Schumer for Senate Democratic leader. A new majority is not a mandate to keep him. Support a competitive replacement contest and make your position public. Reply with your vote and your reason. #DEMRESET',
     house: '[official] Please oppose Hakeem Jeffries for Speaker on the House floor on January 3. Winning back the House is not a vote of confidence in him. The caucus vote was secret. The floor vote is not. Reply with your vote and your reason. #DEMRESET',
     influence: '[official] Publicly advocate for replacing Chuck Schumer and Hakeem Jeffries. Urge Washington State congressional Democrats to hold competitive leadership elections. Silence is a choice. Reply with your choice and your reason. #DEMRESET'
@@ -190,6 +226,44 @@ Thank you,
           ['Urge Washington State congressional Democrats to hold competitive leadership elections.', 'Urge Washington State congressional Democrats to back Chris Van Hollen over Schumer.']
         ]
       }
+    }
+  },
+  // A second box beside the status: a dated, sourced repudiation with its own letter. Evidence: docs/editorial-verification.md.
+  callout: {
+    official: 'strickland',
+    eyebrow: 'WA-10 · UPDATED NOVEMBER 20, 2026',
+    title: "Strickland didn't show up.",
+    items: [
+      { label: 'Vote', text: 'On November 10, the House voted 211 to 204 to send the articles of impeachment against Pete Hegseth to committee, shelving them. Rep. Marilyn Strickland (D-Pierce County) was one of 11 Democrats who missed the vote. It passed by seven votes.' },
+      { label: 'No excuse', text: 'Her office blames a motorcade and says she missed the vote by one minute. Cutting it that close on a vote this important is a failure to prepare, and it had consequences: with her and 10 other Democrats absent, Hegseth was spared an immediate rebuke over the war in Iran, and his impeachment is shelved until January.' },
+      { label: 'Money', text: "She has taken about $291,000 in AIPAC PAC-linked campaign money since February 2022, all of it reported by AIPAC's PAC in its FEC filings. So who is she beholden to?" }
+    ],
+    sources: [
+      { name: 'House Clerk, Roll Call 317', url: 'https://clerk.house.gov/votes/2026317' },
+      { name: 'Seattle Times', url: 'https://www.seattletimes.com/seattle-news/politics/house-blocks-hegseth-impeachment-effort-strickland-absent/' },
+      { name: 'Washington State Standard', url: 'https://www.dnews.com/northwest/wash-congresswoman-sorry-for-missing-hegseth-impeachment-vote-ba2c6b87/' },
+      { name: 'FEC, AIPAC PAC to Strickland', url: 'https://www.fec.gov/data/disbursements/?committee_id=C00797670&recipient_name=STRICKLAND+FOR+WASHINGTON&two_year_transaction_period=2026&two_year_transaction_period=2024&two_year_transaction_period=2022' }
+    ],
+    action: 'Write Strickland a letter',
+    page: '/strickland',
+    dialogTitle: 'Your letter to Rep. Strickland',
+    note: "House contact forms usually take messages only from people in the district. If you're not in WA-10, you can still call her office.",
+    letter: {
+      subject: 'You missed the Hegseth vote',
+      message: `I'm writing to repudiate your absence on November 10, when the House voted 211 to 204 to send the articles of impeachment against Pete Hegseth to committee and shelve them. It passed by seven votes, and you were one of 11 Democrats who missed it.
+
+Your office says you were stuck behind a motorcade and arrived a minute late. That is not an excuse. Cutting it that close on a vote this important is a failure to prepare, and it had consequences: with you and 10 other Democrats absent, Hegseth was spared an immediate rebuke over the war in Iran, and his impeachment is shelved until January. You said you take full responsibility. Then take it. Your one job is to show up and vote, and on the vote that mattered most this month, you weren't there.
+
+You have taken about $291,000 in AIPAC PAC-linked campaign money since February 2022. That is public record, in AIPAC's own FEC filings. When a Democrat who takes that money misses the vote that shelved Hegseth's impeachment, your constituents are entitled to ask who you were really there for.
+
+An apology doesn't undo the vote. Tell us who you are beholden to: your constituents, or AIPAC? Then tell us what you will do now. Will you cosponsor the next articles of impeachment against Hegseth? Will you stop taking AIPAC-linked money? How will you vote for Speaker on January 3?
+
+Reply to this letter with your answers and your reasons. We will hold you to them.
+
+Thank you,
+
+[Your name]
+[Your location]`
     }
   },
   // Where the leadership fights stand. Dated; reverify before changing. Evidence: docs/editorial-verification.md.

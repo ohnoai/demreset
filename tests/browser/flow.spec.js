@@ -16,16 +16,16 @@ test.describe('requirement guards', () => {
     await expect(page.locator('#done1')).toBeVisible();
   });
 
-  test('your list is only your own officials, and never a Republican', async ({ page }) => {
+  test('your list is only your own officials, including a Republican representative', async ({ page }) => {
     await page.goto('/');
     const all = await page.evaluate(() => window.CAMPAIGN.officials);
     for (const rep of all.filter(o => o.group === 'house')) {
       await page.evaluate(d => localStorage.setItem('leadership-wa-drafts-v3', JSON.stringify({ district: d })), rep.district);
       await page.reload();
       const names = await page.locator('#officialList li').allTextContents();
-      const expected = all.filter(o => o.party === 'Democratic' && (o.group !== 'house' || o.id === rep.id)).map(o => o.name);
+      const expected = all.filter(o => o.active && (o.group !== 'house' || o.id === rep.id)).map(o => o.name);
       expect(names).toEqual(expected);
-      for (const r of all.filter(o => o.party === 'Republican')) expect(names).not.toContain(r.name);
+      for (const r of all.filter(o => o.group === 'house' && o.id !== rep.id)) expect(names).not.toContain(r.name);
     }
   });
 
@@ -85,14 +85,18 @@ test('a ZIP across a district line offers only its districts; an unknown ZIP off
   await expect(page.locator('#districtChoices button')).toHaveCount(10);
 });
 
-test('a Republican district is explained and leaves the list to senators and state leaders', async ({ page }) => {
+test('a Republican district gets its representative with the January 3 Republican letter', async ({ page }) => {
   await page.goto('/');
   await page.click('#done1');
   await expect(page.locator('#districtChoices [data-district="WA-04"]')).toContainText('Republican');
   await page.click('#districtChoices [data-district="WA-04"]');
-  await expect(page.locator('#sum2')).toHaveText('✓ WA-04 · Dan Newhouse, a Republican, so not on your list');
-  await expect(page.locator('#officialList li')).toHaveText(['Patty Murray', 'Maria Cantwell', 'Shasti Conrad', 'Bob Ferguson']);
-  await expect(page.locator('#progressText')).toHaveText('0 / 4 contacted');
+  await expect(page.locator('#sum2')).toHaveText('✓ WA-04 · Dan Newhouse (Republican)');
+  await expect(page.locator('#officialList li')).toHaveText(['Patty Murray', 'Maria Cantwell', 'Dan Newhouse', 'Shasti Conrad', 'Bob Ferguson']);
+  await expect(page.locator('#progressText')).toHaveText('0 / 5 contacted');
+  await goTo(page, 'Dan Newhouse');
+  await expect(preview(page)).toContainText('Dear Representative Newhouse,');
+  await expect(preview(page)).toContainText("Don't vote present, and don't miss the vote.");
+  await expect(page.locator('#subjectText')).toHaveText('Vote by name for Speaker on January 3');
 });
 
 test('skipping details still works and says the letters will be unsigned', async ({ page }) => {

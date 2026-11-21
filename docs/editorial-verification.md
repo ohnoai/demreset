@@ -122,3 +122,50 @@ Checked **2026-11-20** from raw page text (no summarizing tool). Supports the `s
     > "Newly-elected Angela Gonzales-Torres of California, a Democratic socialist, revealed on social media on Wednesday afternoon that she also voted “no.”"
 [12] https://www.reuters.com/5f374b32b07b/world/us/chris-van-hollen-announces-run-us-senate-majority-leader-challenging-schumer-2026-11-13/
     > "Closed-door secret-ballot vote to take place next month"
+
+## Republican letters, 2026-11-20
+
+Newhouse (WA-04) and Baumgartner (WA-05) vote on January 3 but not in either Democratic caucus vote. Their letter asks them to vote for a candidate by name, not to vote present, and not to miss the vote, because the Speaker needs a majority of members voting by surname.
+
+- [13] House Practice (118th Congress), ch. 35 "Office of Speaker", https://www.govinfo.gov/content/pkg/GPO-HPRACTICE-118/pdf/GPO-HPRACTICE-118-35.pdf: "Under the modern practice, the Speaker is elected by a majority of Members-elect voting by surname, a quorum being present."
+- [14] Deschler's Precedents, vol. 1, ch. 1 § 6, https://www.govinfo.gov/content/pkg/GPO-HPREC-DESCHLERS-V1/html/GPO-HPREC-DESCHLERS-V1-1-2-6.htm: the Clerk declares the Speaker elected "having received a majority of the votes cast."
+
+The "America First" line is argument, not a factual claim. The letter does not state the House margin, only that "present" votes and absences lower the number Jeffries needs.
+
+## Strickland box, 2026-11-20
+
+[15] https://clerk.house.gov/votes/2026317 (Roll Call 317, Nov 10, 2026, "On Motion to Refer", "Impeaching Peter Brian Hegseth, Secretary of Defense"): yea 211, nay 204, not voting 18; Democratic 0 yea, 203 nay, 11 not voting.
+    > "Strickland | Democratic | Washington | WA | Not Voting"
+[16] https://www.seattletimes.com/seattle-news/politics/house-blocks-hegseth-impeachment-effort-strickland-absent/
+    > "Rep. Marilyn Strickland, of Tacoma, was among 11 Democrats who missed the vote, with her office saying she arrived one minute too late."
+    > "“The Congresswoman was stuck behind a motorcade and missed the vote by 1 minute,” said Siena Miller, a spokesperson for Strickland’s office."
+[17] https://www.dnews.com/northwest/wash-congresswoman-sorry-for-missing-hegseth-impeachment-vote-ba2c6b87/ (Washington State Standard, reprinted; the Standard's own page returned 403 to a raw fetch)
+    > "“I take full responsibility for not being there to vote,” U.S. Rep. Marilyn Strickland, D-Pierce County, told a Seattle television reporter on Wednesday."
+    > "the House voted 211-204, largely along party lines, to refer articles of impeachment against Hegseth to a committee, effectively killing the impeachment effort until the end of the current Congress in January."
+[18] https://www.ibtimes.co.uk/haley-stevens-democrats-hegseth-impeachment-aipac-1831591
+    > "Gillen received approximately $467,000 (£350,000) through AIPAC PAC, followed by Strickland with $291,000 (£218,000)"
+[19] https://gomcgill.com/fact-check-did-aipac-money-play-a-role-in-11-democrats-missing-hegseths-impeachment-vote
+    > "According to SignalData’s review of Federal Election Commission filings, 10 of the 11 absent Democrats received money through AIPAC PAC between January 2022 and October 14, 2026. The figures include contributions from the PAC itself as well as individual donations earmarked through the PAC and forwarded to candidates."
+
+The $291,000 figure is secondary: SignalData's review as reported by IBTimes UK and McGill Media, not checked against FEC filings directly. The owner's brief said "since December 2021"; the sources say January 2022, which the site uses. "If all 11 had been there and voted no, it would have failed" is arithmetic: 211 yea against 204 + 11 = 215 nay.
+
+### FEC check of the $291,000, 2026-11-20
+
+Checked against the FEC's own data: AIPAC PAC (C00797670) Schedule B disbursements to Strickland for Washington (C00732826), cycles 2022 to 2026, via api.open.fec.gov. 272 transactions, 2022-02-22 to 2026-09-30, total $290,583.43:
+
+| Cycle | PAC's own contributions | Earmarked individual donations forwarded |
+| --- | --- | --- |
+| 2022 | $10,000.00 | $15,150.00 |
+| 2024 | $10,000.00 | $137,756.93 |
+| 2026 | $9,818.48 | $107,858.02 |
+| Total | $29,818.48 | $260,764.95 |
+
+Earmarked rows are those whose description starts "EARMARK OF". Refunds by the campaign are not netted. Public view (272 rows): https://www.fec.gov/data/disbursements/?committee_id=C00797670&recipient_name=STRICKLAND+FOR+WASHINGTON&two_year_transaction_period=2026&two_year_transaction_period=2024&two_year_transaction_period=2022
+
+The site now cites the FEC instead of SignalData and says February 2022, the first transaction. It splits the PAC's own money (about $30,000) from donors' money the PAC collected and passed on (about $261,000).
+
+"If all 11 had been there and voted no, it would have failed" was removed. Seven Republicans were also absent, and The Washington Post (as reported by https://sherafy.com/elect-democratic-women-aipac-funding/) argued Republican leaders had enough members nearby to prevail if the vote had stayed open: "That is a plausible scenario, not a record of a vote that actually happened." The site now says only "It passed by seven votes."
+
+The owner rejected the split between the PAC's own money and forwarded donations: every dollar went through AIPAC PAC and is reported in its filings as paid to her campaign. The site now gives the single total, "all of it reported by AIPAC's PAC in its FEC filings." The split stays in the table above for reference.
+
+The "Excuse" row is now "No excuse" at the owner's direction. Its consequences come from [16] ("sparing him an immediate congressional rebuke over the war in Iran") and [17] ("effectively killing the impeachment effort until the end of the current Congress in January"). They are framed as what happened with 11 Democrats absent, not as Strickland alone causing the outcome.

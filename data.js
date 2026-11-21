@@ -11,8 +11,8 @@ window.CAMPAIGN = {
  {id:'delbene',name:'Suzan DelBene',office:'U.S. Representative',group:'house',district:'WA-01',party:'Democratic',vote:'house',phone:'202-225-6311',website:'https://delbene.house.gov/contact/',social:'https://twitter.com/RepDelBene',priority:1},
  {id:'larsen',name:'Rick Larsen',office:'U.S. Representative',group:'house',district:'WA-02',party:'Democratic',vote:'house',phone:'202-225-2605',website:'https://larsen.house.gov/contact/',social:'https://www.facebook.com/RepRickLarsen',priority:1},
  {id:'perez',name:'Marie Gluesenkamp Perez',greeting:'Dear Representative Gluesenkamp Perez,',office:'U.S. Representative',group:'house',district:'WA-03',party:'Democratic',vote:'house',phone:'202-225-3536',website:'https://gluesenkampperez.house.gov/contact',social:'https://twitter.com/RepMGP',priority:1},
- {id:'newhouse',name:'Dan Newhouse',office:'U.S. Representative',group:'house',district:'WA-04',party:'Republican',vote:null,phone:'202-225-5816',website:'https://newhouse.house.gov/contact',social:'',priority:2},
- {id:'baumgartner',name:'Michael Baumgartner',office:'U.S. Representative',group:'house',district:'WA-05',party:'Republican',vote:null,phone:'202-225-2006',website:'https://baumgartner.house.gov/contact/',social:'https://x.com/RepBaumgartner',priority:2},
+ {id:'newhouse',name:'Dan Newhouse',office:'U.S. Representative',group:'house',district:'WA-04',party:'Republican',vote:'republican',phone:'202-225-5816',website:'https://newhouse.house.gov/contact',social:'',priority:2},
+ {id:'baumgartner',name:'Michael Baumgartner',office:'U.S. Representative',group:'house',district:'WA-05',party:'Republican',vote:'republican',phone:'202-225-2006',website:'https://baumgartner.house.gov/contact/',social:'https://x.com/RepBaumgartner',priority:2},
  {id:'randall',name:'Emily Randall',office:'U.S. Representative',group:'house',district:'WA-06',party:'Democratic',vote:'house',phone:'202-225-5916',website:'https://randall.house.gov/contact',social:'https://facebook.com/RepEmilyRandall',priority:1},
  {id:'jayapal',name:'Pramila Jayapal',office:'U.S. Representative',group:'house',district:'WA-07',party:'Democratic',vote:'house',phone:'202-225-3106',website:'https://jayapal.house.gov/contact/',social:'http://www.twitter.com/RepJayapal/',priority:1},
  {id:'schrier',name:'Kim Schrier',office:'U.S. Representative',group:'house',district:'WA-08',party:'Democratic',vote:'house',phone:'202-225-7761',website:'https://schrier.house.gov/contact',social:'https://x.com/repkimschrier',priority:1},
@@ -51,7 +51,8 @@ window.CAMPAIGN = {
  ]
 };
 for (const official of window.CAMPAIGN.officials) {
-  official.active = official.party === 'Democratic';
+  // Republicans are on the list only for the January 3 Speaker vote, with their own letter.
+  official.active = official.party === 'Democratic' || official.vote === 'republican';
   official.form = window.CAMPAIGN.forms[official.id];
 }
 // User observations do not establish unlimited fields or replace frontend evidence.

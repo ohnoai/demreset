@@ -64,10 +64,12 @@ test('prototype drafts, calls, posts and progress carry over for every relevant 
   await page.goto('/');
   const personal = (await stored(page, draftKey)).personal;
   for (const o of await page.evaluate(() => window.CAMPAIGN.officials)) {
+    // The Republican letter is new, so Democratic prototype text never lands on it.
+    if (o.vote === 'republican') { expect(personal[o.id]).toBeUndefined(); continue; }
     if (o.group === 'influence') { expect(personal[o.id]).not.toHaveProperty('call'); expect(personal[o.id].social).toBe(legacy.social); continue; }
     expect(personal[o.id]).toMatchObject({ message: legacy.drafts[o.group].message, call: legacy.callScript[o.group], social: legacy.social });
   }
-  // Republican offices keep their history but never become targets.
+  // Prototype progress for Republican offices is kept.
   expect(await stored(page, actionKey)).toMatchObject({ 'murray:letter': true, 'newhouse:letter': true });
   await toConsole(page);
   await expect(preview(page)).toHaveText('My original Senate message');
@@ -105,8 +107,11 @@ test('every active official renders full and concise letters within the conserva
       const d = M.draft(st, o, T); return { version, category: o.vote || 'influence', message: d.message, count: d.message.replace(/\r?\n/g, '\r\n').length };
     }));
   });
-  expect(rows).toHaveLength(24);
-  for (const row of rows) { expect(row.count).toBeGreaterThanOrEqual(row.version === 'full' ? 1500 : 700); expect(row.count).toBeLessThanOrEqual(row.version === 'full' ? 1900 : 1200); }
-  for (const version of ['full', 'concise']) for (const cat of ['senate', 'house', 'influence'])
+  expect(rows).toHaveLength(28);
+  for (const row of rows) {
+    const [min, max] = row.category === 'republican' ? (row.version === 'full' ? [1000, 1400] : [550, 900]) : (row.version === 'full' ? [1500, 1900] : [700, 1200]);
+    expect(row.count).toBeGreaterThanOrEqual(min); expect(row.count).toBeLessThanOrEqual(max);
+  }
+  for (const version of ['full', 'concise']) for (const cat of ['senate', 'house', 'republican', 'influence'])
     expect(new Set(rows.filter(r => r.category === cat && r.version === version).map(r => r.message.split('\n\n').slice(1).join('\n\n'))).size).toBe(1);
 });

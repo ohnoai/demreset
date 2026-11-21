@@ -29,6 +29,8 @@
     if (legacy && typeof legacy === 'object') {
       for (const o of allOfficials) {
         const old = legacy.drafts?.[o.group];
+        // Prototype text was written for Democrats; the Republican letter starts fresh.
+        if (o.vote === 'republican') { if (savedActions === null && legacy.progress?.[o.id] === true) actions[`${o.id}:letter`] = true; continue; }
         if (old && ['senate', 'house'].includes(o.group)) {
           for (const field of ['subject', 'message']) if (typeof old[field] === 'string') M.edit(state, o, field, old[field]);
         }
@@ -167,6 +169,23 @@
       return i ? [', ', link] : [link];
     }));
   }
+  // The second box: same dt/dd layout, linking to its own page with the letter (strickland/index.html).
+  const callout = T.callout, calloutOfficial = callout && allOfficials.find(o => o.id === callout.official);
+  $('callout').hidden = !calloutOfficial;
+  if (calloutOfficial) {
+    $('calloutEyebrow').textContent = callout.eyebrow || '';
+    $('calloutTitle').textContent = callout.title || '';
+    $('calloutItems').replaceChildren(...(callout.items || []).map(item => {
+      const div = document.createElement('div'), dt = document.createElement('dt'), dd = document.createElement('dd');
+      dt.textContent = item.label; dd.textContent = item.text; div.append(dt, dd); return div;
+    }));
+    $('calloutSources').replaceChildren('Sources: ', ...(callout.sources || []).flatMap((source, i) => {
+      const link = Object.assign(document.createElement('a'), { href: source.url, target: '_blank', rel: 'noopener noreferrer', textContent: source.name + ' ↗' });
+      return i ? [', ', link] : [link];
+    }));
+    $('calloutOpen').textContent = callout.action;
+    $('calloutOpen').href = callout.page;
+  }
   const askOptions = Object.entries(T.asks?.options || {});
   $('askRow').hidden = askOptions.length < 2;
   if (!T.asks?.options?.[state.ask]) state.ask = askOptions[0]?.[0] || 'oppose';
@@ -193,12 +212,12 @@
     const parts = [d.name, d.city, county && (/county$/i.test(county) ? county : county + ' County'), d.zip].map(v => (v || '').trim()).filter(Boolean);
     $('sum1').textContent = parts.length ? '✓ ' + parts.join(' · ') : 'Skipped. Letters will end with [Your name].';
     const rep = repFor(state.district);
-    $('sum2').textContent = !rep ? '' : rep.active !== false ? `✓ ${rep.district} · ${rep.name}` : `✓ ${rep.district} · ${rep.name}, a Republican, so not on your list`;
+    $('sum2').textContent = !rep ? '' : `✓ ${rep.district} · ${rep.name}${rep.party === 'Republican' ? ' (Republican)' : ''}`;
   }
   function choiceButton(rep) {
     const b = document.createElement('button'); b.type = 'button'; b.className = 'btn choice'; b.dataset.district = rep.district;
     b.textContent = `${rep.district} · ${rep.name}`;
-    if (rep.active === false) { const s = document.createElement('span'); s.textContent = 'Republican'; b.append(' ', s); }
+    if (rep.party === 'Republican') { const s = document.createElement('span'); s.textContent = 'Republican'; b.append(' ', s); }
     return b;
   }
   function renderDistrictStep() {
@@ -211,7 +230,7 @@
     if (single) {
       const rep = repFor(districtName(hits[0]));
       $('matchLabel').textContent = `ZIP ${zip} is most likely ${rep.district}. Your representative:`;
-      $('matchName').textContent = rep.name + (rep.active === false ? ' (Republican)' : '');
+      $('matchName').textContent = rep.name + (rep.party === 'Republican' ? ' (Republican)' : '');
       $('confirmDistrict').dataset.district = rep.district;
       return;
     }

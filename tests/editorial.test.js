@@ -24,7 +24,7 @@ test('category letters meet full and concise CRLF budgets for every active greet
   // Full letters must leave room under the 2,000-character form caps for a name and location.
   for (const [version, source, minimum, maximum] of [['full', content, 1500, 1900], ['concise', content.concise, 700, 1200]]) {
     assert.ok(source.letters, `${version} category letters exist`);
-    assert.deepEqual(Object.keys(source.letters).sort(), ['house', 'influence', 'senate']);
+    assert.deepEqual(Object.keys(source.letters).sort(), ['house', 'influence', 'republican', 'senate']);
     for (const official of officials) {
       const letter = source.letters[official.vote || 'influence'];
       assert.equal(letter.subject, subjects[official.vote || 'influence']);
@@ -119,4 +119,28 @@ test('House copy targets the public floor vote and the status block is sourced',
   assert.equal((status.items[1].text.match(/\((?:N\.Y\.|N\.J\.|Colo\.|Mich\.|Pa\.|Ohio|Calif\.)\)/g) || []).length, 8);
   for (const source of status.sources) assert.match(source.url, /^https:\/\//);
   assert.doesNotMatch(JSON.stringify(status), /\u2014/);
+});
+
+test('Republicans get a procedural January 3 ask: vote by name, no present votes, no absences', () => {
+  const context = { window: {} };
+  for (const file of ['campaign.js', 'data.js']) vm.runInNewContext(fs.readFileSync(path.join(root, file), 'utf8'), context);
+  const content = context.window.CAMPAIGN_CONTENT;
+  const reps = context.window.CAMPAIGN.officials.filter(o => o.party === 'Republican');
+  assert.equal(JSON.stringify(reps.map(o => [o.id, o.vote, o.active])), JSON.stringify([['newhouse', 'republican', true], ['baumgartner', 'republican', true]]));
+  for (const [source, min, max] of [[content, 1000, 1400], [content.concise, 550, 900]]) {
+    const letter = source.letters.republican;
+    assert.equal(letter.subject, 'Vote by name for Speaker on January 3');
+    assert.match(letter.message, /Thank you,\n\n\[Your name\]\n\[Your location\]$/);
+    for (const pattern of [/January 3/, /present/, /by name/, /America First/, /AIPAC/, /[Rr]eply/, /Hakeem Jeffries/]) assert.match(letter.message, pattern);
+    assert.doesNotMatch(letter.message, /\u2014|Schumer/);
+    for (const o of reps) { const n = crlfLength(`Dear Representative ${o.name.split(' ').at(-1)},\n\n${letter.message}`); assert.ok(n >= min && n <= max, `${o.id}: ${n}`); }
+  }
+  const call = content.calls.republican, post = content.posts.republican;
+  for (const token of ['[Your name]', '[Your location]', '[official]']) assert.ok(call.includes(token));
+  assert.match(call, /present/); assert.match(post, /present/);
+  assert.ok(post.includes('[official]') && post.length <= 280);
+  assert.doesNotMatch(call + post, /\u2014/);
+  // The Van Hollen choice never touches Republican copy.
+  const rep = [content.letters.republican.message, content.concise.letters.republican.message, call, post];
+  for (const [from] of content.asks.options.vanhollen.edits) assert.ok(!rep.some(t => t.includes(from)), from);
 });

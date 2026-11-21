@@ -7,7 +7,9 @@ http.createServer((req, res) => {
   let pathname;
   try { pathname = decodeURIComponent(new URL(req.url, 'http://localhost').pathname); }
   catch { res.writeHead(400).end('Bad request'); return; }
-  const file = path.resolve(root, '.' + (pathname === '/' ? '/index.html' : pathname));
+  let file = path.resolve(root, '.' + (pathname === '/' ? '/index.html' : pathname));
+  // Like Vercel, a folder serves its index.html (/strickland -> strickland/index.html).
+  try { if (fs.statSync(file).isDirectory()) file = path.join(file, 'index.html'); } catch {}
   if (!file.startsWith(root + path.sep) || pathname.split('/').some(part => part.startsWith('.')) || pathname.includes('node_modules')) {
     res.writeHead(403).end(); return;
   }
